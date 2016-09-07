@@ -1,20 +1,71 @@
+
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
 
+      <script src="http://tic-tac-toe.wdibos.com/"></script>
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+    </head>
+
+    <body class="container-fluid">
+
+    <div>
+
+      <h1>Welcome</h1>
+
+      <h2>Log-in</h2>
+
+        <form action="process.php" method="POST">
+          Email
+          <input type="text" name="email"/>
+          Password
+          <input type="password" name="password"/>
+          <input type="submit" name="submit" value=Log-in>
+        </form>
+
+      <h2>Sign-up</h2>
+
+        <p>Email</p>
+        <p>Password</p>
+        <p>Repeat password</p>
+
+    </div>
+
+      <h1>Tic Tac Toe</h1>
+
+
+      <form class="container">
+        <input class="image" id="o1"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        <input class="image" id="o2"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        <input class="image" id="o3"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        <br/>
+        <input class="image" id="o4"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        <input class="image" id="o5"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        <input class="image" id="o6"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        </br>
+        <br/>
+        <input class="image" id="o7"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        <input class="image" id="o8"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        <input class="image" id="o9"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        <br/>
+      </form>
+
+
+    <div>
+      <h2>Game in progress</h2>
+      <h1>Player A</h1>
+      <h1>Player B</h1>
+    </div>
+
+    <div>
+
+      <h1>SAVE GAME</h1>
+      <h1>Re-match</h1>
+      <h1>Log-out</h1>
+    </div>
+
     </body>
 </html>

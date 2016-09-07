@@ -1,3 +1,8 @@
+```js
+/// all my code here
+```
+
+
 'use strict';
 
 // user require with a reference to bundle the file and use it in this file
