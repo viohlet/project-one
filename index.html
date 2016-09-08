@@ -1,50 +1,127 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Tic Tac Toe</title>
+  <head>
+    <title>Tic Tac Toe</title>
 
-      <script src="http://tic-tac-toe.wdibos.com/"></script>
-      <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+    <link rel="Stylesheet" href="index.scss" type="text/css" />
 
-    </head>
+    <script src="http://tic-tac-toe.wdibos.com/"></script>
+    <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
 
-    <body class="container-fluid">
+  <body class="container-fluid">
 
-    <div>
+    <div class="welcome">
 
       <h1>Welcome</h1>
 
-      <h2>Log-in</h2>
+      <form id="sign-in">
+        <fieldset>
+          <legend>Log-in</legend>
+          <input type="email" name="credentials[email]" placeholder="Enter your email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" name="submit" value="sign-in">
+        </fieldset>
+      </form>
 
-        <form action="process.php" method="POST">
-          Email
-          <input type="text" name="email"/>
-          Password
-          <input type="password" name="password"/>
-          <input type="submit" name="submit" value=Log-in>
-        </form>
-
-      <h2>Sign-up</h2>
-
-        <p>Email</p>
-        <p>Password</p>
-        <p>Repeat password</p>
-
+      <form id="sign-up" action="process.php" method="POST">
+        <fieldset>
+          <legend>Register</legend>
+          <input type="email" name="credentials[email]" placeholder="Enter your email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credential[password_confirmation]" placeholder="Confirm your password">
+          <input type="submit" name="submit" value="sign-up">
+        </fieldset>
+      </form>
     </div>
 
-      <h1>Tic Tac Toe</h1>
 
 
-      <form class="container">
-        <input class="image" id="o1"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
-        <input class="image" id="o2"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
-        <input class="image" id="o3"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+
+
+    <!-- <h1>Tic Tac Toe</h1>
+
+    <div class="board">
+      <form>
+      <tr= 'row1'>
+        <td>
+          <input value=" " id="0" type="button" onClick='tic(this)'>
+        </td>
+        <td>
+          <input value=" " id="1" type="button" onClick='tic(this)'>
+        </td>
+        <td>
+          <input value=" " id="2" type="button" onClick='tic(this)'>
+        </td>
+      </tr>
+      <tr= 'row2'>
+      </tr>
+        <td>
+          <input value=" " id="3" type="button" onClick='tic(this)'>
+        </td>
+        <td>
+          <input value=" " id="4" type="button" onClick='tic(this)'>
+        </td>
+        <td>
+          <input value=" " id="5" type="button" onClick='tic(this)'>
+        </td>
+      <tr = 'row3'>
+        <td>
+          <input value=" " id="6" type="button" onClick='tic(this)'>
+        </td>
+        <td>
+          <input value=" " id="7" type="button" onClick='tic(this)'>
+        </td>
+        <td>
+          <input value=" " id="8" type="button" onClick='tic(this)'>
+        </td>
+      </tr>
+      </table>
+    </form> -->
+
+
+    <h1>Tic Tac Toe</h1>
+
+    <div class="board">
+      <form>
+        <div class= 'row1'>
+            <input value=" " id="0" type="button" onClick='tic(this)'>
+            <input value=" " id="1" type="button" onClick='tic(this)'>
+            <input value=" " id="2" type="button" onClick='tic(this)'>
+        </div>
+        <div class= 'row2'>
+            <input value=" " id="3" type="button" onClick='tic(this)'>
+            <input value=" " id="4" type="button" onClick='tic(this)'>
+            <input value=" " id="5" type="button" onClick='tic(this)'>
+        </div>
+        <div class= 'row3'>
+            <input value=" " id="6" type="button" onClick='tic(this)'>
+            <input value=" " id="7" type="button" onClick='tic(this)'>
+            <input value=" " id="8" type="button" onClick='tic(this)'>
+        </div>
+      </form>
+    </div>
+
+
+
+
+
+
+<!-- Do not forget to save history -->
+
+<!--
+        <input class="button" id="ox" width="32">
+
+
+        <input class="image" id="o1" value1=(src="~/wdi/projects/project-one/equis.png") value2=(src="~/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        <input class="image" id="o2" value1=(src="~/wdi/projects/project-one/equis.png") value2=(src="~/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        <input class="image" id="o3" value1=(src="~/wdi/projects/project-one/equis.png") value2=(src="~/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
         <br/>
-        <input class="image" id="o4"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
-        <input class="image" id="o5"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
-        <input class="image" id="o6"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        <input class="image" id="o4"  value1=(src="/wdi/projects/project-one/equis.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        <input class="image" id="o5"  value1=(src="/wdi/projects/project-one/equis.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
+        <input class="image" id="o6"  value1=(src="/wdi/projects/project-one/equis.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
         </br>
         <br/>
         <input class="image" id="o7"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
@@ -54,9 +131,12 @@
       </form>
 
 
-    <div>
-      <h2>Game in progress</h2>
-      <h1>Player A</h1>
+-->
+    <div class="gamescreen">
+      <h5>Game in progress...</h5>
+
+      <div class="playera">
+        <h1>Player A</h1>
       <h1>Player B</h1>
     </div>
 
@@ -67,5 +147,5 @@
       <h1>Log-out</h1>
     </div>
 
-    </body>
+  </body>
 </html>

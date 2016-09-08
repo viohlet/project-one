@@ -2,19 +2,16 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 
-.container {
-  float: left;
-  margin-top: 20px;
-  width: 90px;
-  }
-
-.box {
-  color: green;
-  font-size: 16px;
-  font-weight: bold;
+.container-fluid {
+  background-color: #614126;
+  color: #E3A423;
   text-align: center;
-  width: 30px;
-  height: 30px;
-  box-sizing: border-box;
-  border: 1px solid;
-  }
+}
+
+.welcome {
+  text-align: center;
+}
+
+.board {
+  margin: 0 auto;
+}
