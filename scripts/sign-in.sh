@@ -4,8 +4,7 @@ curl --include --request POST http://tic-tac-toe.wdibos.com \
   --data '{
     "credentials": {
       "email": "chris5@chris.com",
-      "password": "abc"
-
+      "password": "abc",
   }'
 
 echo

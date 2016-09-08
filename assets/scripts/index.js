@@ -17,6 +17,13 @@ $(() => {
 });
 
 
+
+
+
+
+
+
+
 function tic(element) {
    element.value = "x";
 }

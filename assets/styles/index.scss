@@ -8,10 +8,28 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   text-align: center;
 }
 
-.welcome {
-  text-align: center;
+// .welcome {
+//   text-align: center;
+// }
+
+.playera {
+  // position: relative;
+  // left: 30px;
+  // border: 3px solid #73AD21;
+  text-align: left;
+}
+
+.playerb {
+  text-align: right;
 }
 
 .board {
   margin: 0 auto;
+  text-align: center;
 }
+
+// .row1,
+// .row2,
+// .row3 {
+//   text-align: center;
+// }
