@@ -1,13 +1,13 @@
 'use strict';
 
+// const gameLogic = require('../../../gameLogic.js');
+const getFormFields = require('../../../lib/get-form-fields');
 
 const api = require('./api');
 const ui = require('./ui');
-const getFormFields = require('../../../lib/get-form-fields');
 
 //the event object has an event form whihin it. object that can pass through
 //event.defualt prevent us from refreshing the page
-// this is event.target. use event.target for now
 
 const onSignUp = function (event) {
   event.preventDefault();
@@ -25,7 +25,7 @@ const onSignIn = function (event) {
     .fail(ui.failure);
   };
 
-
+//ADD LATERRRRRRRRRRRR
 // const onSignOut = function(event){
 //   event.preventDefault();
 //   let data = getFormFields(event.target);
@@ -33,7 +33,6 @@ const onSignIn = function (event) {
 //   .done(ui.signOutSuccess)
 //   .fail(ui.fail);
 // };
-
 
 
 //// NO SE SI ESTE TA BN
@@ -89,8 +88,9 @@ const addHandlers = () => {
 
 
 
-// const Xturn = true;
-//   let nummoves = 0;
+// const xTurn = true;
+//   let numMoves
+//    = 0;
 //   let merp;
 //     function tic(element) {
 //       const value = square.value;
@@ -104,47 +104,51 @@ const addHandlers = () => {
 //       let button7 = document.getElementById("7").value;
 //       let button8 = document.getElementById("8").value;
 //
-//     for (nummoves = 0; nummoves < 2; nummoves++) {
+//     for (numMoves
+//        = 0; numMoves
+//         < 2; numMoves
+//         ++) {
+//       console.console.log(numMoves
+//       );
 //
-//       if (button0 == "X") {
+//       if (button0 = "X") {
 //         merp = document.getElementById("1").value = "O";
-//         Xturn == true;
+//         xTurn == true;
 //       }
 //
 //       if (button1 = "X") {
 //         merp = document.getElementById("2").value = "O";
-//         Xturn = true;
+//         xTurn = true;
 //                 }
 //
-//       if (button2 == "X") {
+//       if (button2 = "X") {
 //         merp = document.getElementById("3").value = "O";
-//         Xturn = true;
+//         xTurn = true;
 //         }
 //
 //       if (button3 == "X") {
-//         merp = document.getElementById("k9").value = "O";
+//         merp = document.getElementById("4").value = "O";
 //         }
 //       }
 //
-//       for (nummoves = 2; nummoves < 3; nummoves++) {
 //
-//       if (doc1 == "X") {
-//         cat = document.getElementById("k7").value = "O";
-//         Xturn = true;
-//                 }
-//
-//             }
+//     for (numMoves= 2; numMoves< 3; numMoves++) {
+//       if ("button1" == "X") {
+//         merp = document.getElementById("6").value = "O";
+//         xTurn = true;
+//         }
+//       }
 //
 //       if (value != "X" && value != "O") {
-//         if (Xturn == true) {
+//         if (xTurn == true) {
 //         square.value = "X";
-//         return Xturn = false;
-//         nummoves++;
+//         return xTurn = false;
+//         numMoves++;
 //         }
-//         else if (Xturn == false) {
+//         else if (xTurn == false) {
 //         square.value = "O";
-//         return Xturn = true;
-//         nummoves++;
+//         return xTurn = true;
+//         numMoves++;
 //         }
 //       }
 //         else {
@@ -166,6 +170,12 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
+  // gameLogic,
+  // xTurn,
+  // numMoves,
+  // merp,
+  // tic,
+
   // onClick,
   // moveAction,
 };

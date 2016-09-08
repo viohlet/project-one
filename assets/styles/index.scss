@@ -3,23 +3,26 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 
 .container-fluid {
-  background-color: #614126;
+  background-color: black;
   color: #E3A423;
   text-align: center;
+  background-image: url("http://s2.dmcdn.net/J3OKz/1280x720-38D.jpg");
+  background-image: no-repeat center fixed;
+  background-size: 100%;
 }
 
 // .welcome {
 //   text-align: center;
 // }
 
-.playera {
+.playerA {
   // position: relative;
   // left: 30px;
   // border: 3px solid #73AD21;
   text-align: left;
 }
 
-.playerb {
+.playerB {
   text-align: right;
 }
 
