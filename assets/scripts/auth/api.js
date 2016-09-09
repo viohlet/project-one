@@ -20,6 +20,18 @@ return $.ajax({
   });
 };
 
+const signOut = () => {
+  return $.ajax({
+    url: app.host + '/sign-out/' + app.user.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    }
+  });
+};
+
+//  MORE STUGFF change pass and get new game, HOSTORY and get new game - JORDAN
+
 // const changePassword = (data) => {
 //   return $.ajax({
 //     // http://localhost:3000/change-password
@@ -31,20 +43,11 @@ return $.ajax({
 //     data: data,
 //   });
 // };
-//
-// const signOut = () => {
-//   return $.ajax({
-//     url: app.host + '/sign-out/' + app.user.id,
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     }
-//   });
-// };
+
 
 module.exports = {
   signIn,
   signUp,
-  // signOut
+  signOut
   // changePassword
 };

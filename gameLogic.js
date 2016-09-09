@@ -1,41 +1,61 @@
-
-'use strict';
-
-// const events = require('./assets/scripts/auth/events.js');
 //
-// const boardVal = {0:"", 1:"", 2:"", 3:"", 4:"", 5:"", 6:"", 7:"", 8:""};
+// 'use strict';
 //
-// const gameWinner = if ((boardValue[0] === boardValue[1]) && :"", 1:"", 2:""))
-//
-//
-// const addToYourTurn = function (yourTurn) {
-//   id = yourTurn();
-//   boardVal[id][value];
-//   console.log(id);
-// };
-// let turn = 0;
-// const setCellValue = function (cellId) {
-//   event.preventDefault();
-//   let cellId = yourTurn();
-//   if (turn % 2 === 0) {
-//    cellId.text('X');
-//   } else  {
-//    $('#cellId').text('O');
+// // winner might be to check whether X or O
+// const getWinner = function() {
+//   if (winnerIsX()) {
+//     return 'x';
 //   }
-//   turn++;
+//   if (winnerIsO()) {
+//     return 'o';
+//   }
+//   return null;
 // };
-//tileId also was event.target $()
-
-//next -> getTileValue
-
-
-var 
-
-
-
-
-
-module.exports = {
-  // setCellValue,
-  // addToYourTurn,
-};
+//
+// const winnerIsX = function() {
+//   return winsRowX() || winsColumnX() || winsDiagonalX();
+// };
+//
+// const winnerIsO = function() {
+//   return winsRowX() || winsColumnX() || winsDiagonalX();
+// };
+//
+// const winsRowX = function() {
+//   return allThreeX(cellValue('a'), cellValue('b'), cellValue('c')) ||
+//           allThreeX(cellValue('d'), cellValue('e'), cellValue('f')) ||
+//           allThreeX(cellValue('g'), cellValue('h'), cellValue('i'));
+// }
+//
+// const winsColumnX = function() {
+//   return allThreeX(cells('a'), cells('d'), cells('g')) ||
+//          allThreeX(cells('b'), cells('e'), cells('h')) ||
+//          allThreeX(cells('c'), cells('f'), cells('i'));
+// };
+//
+//
+// const winsDiagonalX = function() {
+//   return allThreeX(cells('a'), cells('e'), cells('i')) ||
+//          allThreeX(cells('c'), cells('e'), cells('g'));
+// }
+//
+// const allThreeX = function(cellOne, cellTwo, cellThree) {
+// };
+// };
+//
+// const allThreeX = function(cellOne, cellTwo, cellThree) {
+//   return (cellOne === 'x') && (cellTwo === 'x') && (cellThree === 'x');
+// }
+//
+// var allThree = function(player, cellOne, cellTwo, cellThree) {
+//   return (cellOne === player) && (cellTwo === player) && (cellThree === player);
+// }
+//
+//
+// module.exports = {
+//   getWinner,
+//   winnerIsO,
+//   winnerIsX,
+//   makeMove,
+//   // setCellValue,
+//   // addToYourTurn,
+// };

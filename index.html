@@ -1,18 +1,20 @@
 
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Tic Tac Toe</title>
 
     <!-- <link rel="Stylesheet" href="index.scss" type="text/css" />
 
-    <!--  <script src="http://tic-tac-toe.wdibos.com/"></script> -->
+    <!- <script src="http://tic-tac-toe.wdibos.com/"></script> -->
     <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
     <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
   </head>
 
   <body class="container-fluid">
 
+<!-- WELCOME DIV -->
     <div class="welcome">
 
       <h1>Welcome</h1>
@@ -37,117 +39,75 @@
       </form>
     </div>
 
-
-
-
-
-    <!-- <h1>Tic Tac Toe</h1>
-
-    <div class="board">
-      <form>
-      <tr= 'row1'>
-        <td>
-          <input value=" " id="0" type="button" onClick='tic(this)'>
-        </td>
-        <td>
-          <input value=" " id="1" type="button" onClick='tic(this)'>
-        </td>
-        <td>
-          <input value=" " id="2" type="button" onClick='tic(this)'>
-        </td>
-      </tr>
-      <tr= 'row2'>
-      </tr>
-        <td>
-          <input value=" " id="3" type="button" onClick='tic(this)'>
-        </td>
-        <td>
-          <input value=" " id="4" type="button" onClick='tic(this)'>
-        </td>
-        <td>
-          <input value=" " id="5" type="button" onClick='tic(this)'>
-        </td>
-      <tr = 'row3'>
-        <td>
-          <input value=" " id="6" type="button" onClick='tic(this)'>
-        </td>
-        <td>
-          <input value=" " id="7" type="button" onClick='tic(this)'>
-        </td>
-        <td>
-          <input value=" " id="8" type="button" onClick='tic(this)'>
-        </td>
-      </tr>
-      </table>
-    </form> -->
+    <form id="change-password" action="process.php" method="POST">
+      <fieldset>
+        <legend>Change your password</legend>
+        <input type="password" name="password[old]" placeholder="Old Password">
+        <input type="password" name="password[new]" placeholder="New Password">
+        <input type="submit" name="submit" placeholder="Change password">
+      </fieldset>
+    </form>
+  </div>
+<!-- END OF WELCOME DIV -->
 
 
     <h1>Tic Tac Toe</h1>
 
+<!-- BOARD DIV -->
+<!-- <input value=" " class="0" type="button" style="font-size:18pt;height:150px;width:150px" onClick='tic(this)'> -->
+
     <div class="board">
       <form>
         <div class= 'row1'>
-            <input value=" " id="0" type="button" style="font-size:18pt;height:150px;width:150px" onClick='tic(this)'>
-            <input value=" " id="1" type="button" style="font-size:18pt;height:150px;width:150px" onClick='tic(this)'>
-            <input value=" " id="2" type="button" style="font-size:18pt;height:150px;width:150px" onClick='tic(this)'>
+            <input value=" " id="0" class="tile" type="button" style="font-size:18pt;height:150px;width:150px" onClick="markbox(this)" />
+            <input value=" " id="1" class="tile" type="button" style="font-size:18pt;height:150px;wclassth:150px" onClick="markbox(this)" />
+            <input value=" " id="2" class="tile" type="button" style="font-size:18pt;height:150px;wclassth:150px" onClick="markbox(this)" />
         </div>
         <div class= 'row2'>
-            <input value=" " id="3" type="button" style="font-size:18pt;height:150px;width:150px" onClick='tic(this)'>
-            <input value=" " id="4" type="button" style="font-size:18pt;height:150px;width:150px" onClick='tic(this)'>
-            <input value=" " id="5" type="button" style="font-size:18pt;height:150px;width:150px" onClick='tic(this)'>
+            <input value=" " id="3" class="tile" type="button" style="font-size:18pt;height:150px;wclassth:150px" onClick="markbox(this)" />
+            <input value=" " id="4" class="tile" type="button" style="font-size:18pt;height:150px;wclassth:150px" onClick="markbox(this)" />
+            <input value=" " id="5" class="tile" type="button" style="font-size:18pt;height:150px;wclassth:150px" onClick="markbox(this)" />
         </div>
         <div class= 'row3'>
-            <input value=" " id="6" type="button" style="font-size:18pt;height:150px;width:150px" onClick='tic(this)'>
-            <input value=" " id="7" type="button" style="font-size:18pt;height:150px;width:150px" onClick='tic(this)'>
-            <input value=" " id="8" type="button" style="font-size:18pt;height:150px;width:150px" onClick='tic(this)'>
+            <input value=" " id="6" class="tile" type="button" style="font-size:18pt;height:150px;wclassth:150px" onClick="markbox(this)" />
+            <input value=" " id="7" class="tile" type="button" style="font-size:18pt;height:150px;wclassth:150px" onClick="markbox(this)" />
+            <input value=" " id="8" class="tile" type="button" style="font-size:18pt;height:150px;width:150px" onClick="markbox(this)" />
         </div>
       </form>
     </div>
-
-
-
-
+<!-- END OF BOARD DIV -->
 
 
 <!-- Do not forget to save history -->
 
-<!--
-        <input class="button" id="ox" width="32">
 
+    <h5>Game in progress...</h5>
 
-        <input class="image" id="o1" value1=(src="~/wdi/projects/project-one/equis.png") value2=(src="~/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
-        <input class="image" id="o2" value1=(src="~/wdi/projects/project-one/equis.png") value2=(src="~/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
-        <input class="image" id="o3" value1=(src="~/wdi/projects/project-one/equis.png") value2=(src="~/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
-        <br/>
-        <input class="image" id="o4"  value1=(src="/wdi/projects/project-one/equis.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
-        <input class="image" id="o5"  value1=(src="/wdi/projects/project-one/equis.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
-        <input class="image" id="o6"  value1=(src="/wdi/projects/project-one/equis.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
-        </br>
-        <br/>
-        <input class="image" id="o7"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
-        <input class="image" id="o8"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
-        <input class="image" id="o9"  value1=(src="/files/2917/fxlogo.png") value2=(src="/files/2917/fxlogo.png") width="50" onclick="tictactoe(this)">
-        <br/>
-      </form> -->
-
-
-    <div class="gamescreen">
-      <h5>Game in progress...</h5>
-
+<!-- PLAYER A DIV -->
       <div class="playerA">
         <h1>Player A</h1>
       </div>
 
+<!-- PLAYER B DIV -->
       <div class="playerB">
         <h1>Player B</h1>
       </div>
-    </div>
 
-    <div>
+<!-- byeScreen DIV -->
+    <div class= "byeScreen">
 
       <h1>SAVE GAME</h1>
+
       <h1>Re-match</h1>
-      <h1>Log-out</h1>
+
+      <form id="sign-out">
+        <fieldset>
+          <legend>Log-out</legend>
+          <input type="email" name="credentials[email]" placeholder="Enter your email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" name="submit" value="Next">
+        </fieldset>
+      </form>
     </div>
 
   </body>
