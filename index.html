@@ -104,22 +104,27 @@
     <h5>Game in progress...</h5>
 
 <!-- PLAYER A DIV -->
-      <div class="playerA">
-        <h1>Player A</h1>
-      </div>
+    <div class="playerA">
+      <h1>Player A</h1>
+    </div>
 
 <!-- PLAYER B DIV -->
-      <div class="playerB">
-        <h1>Player B</h1>
-      </div>
+    <div class="playerB">
+      <h1>Player B</h1>
+    </div>
 
 <!-- byeScreen DIV -->
     <div class= "byeScreen">
 
       <h1>SAVE GAME</h1>
 
-      <form id= "historyGames">
-        <button type="submit" name="submit" class="btn btn-default">History of Games</button>
+      <form id= "newGame">
+        <button type="submit" name="submit" class="btn btn-default">New Game</button>
+      </form>
+
+      <form id= "joinGame">
+        <input type="text" name="join[id]" id="join-id" placeholder="Something here">
+        <button type="submit" name="submit" class="btn btn-default">Challenge Someone</button>
       </form>
 
       <form id= "getGameById">
@@ -127,9 +132,10 @@
         <button type="submit" name="submit" class="btn btn-default">Find Game</button>
       </form>
 
-      <form id= "newGame">
-        <button type="submit" name="submit" class="btn btn-default">New Games</button>
+      <form id= "historyGames">
+        <button type="submit" name="submit" class="btn btn-default">Saved History</button>
       </form>
+      <!-- Feeling like historyGames is index?????  bc we have over1 and value-->
 
       <form id="sign-out">
         <fieldset>

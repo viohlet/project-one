@@ -15,8 +15,41 @@ const newGameSuccess = (data) => {
   console.log(app.game);
 };
 
+const joinGameSuccess = (data) => { ///add?
+  app.game = data.game;
+  console.log(app.game);
+};
+
+// const updateGameSuccess = (data) => {
+//   app.game = data.game;
+//   console.log(app.game);
+// };
+
+const getGameByIdSuccess = (data) => {
+  app.game = data.game;
+  $(".game-id-append").append('<h1>'+ data.game.player_x.email + '  was the player'+ '</h1>');  //oops?
+  console.log(data);
+};
+//   const getGameSuccess = (data) => {
+//     if(data.games){
+//       console.log(data.games);
+//   } else{
+//     console.log('fail');
+//   }
+// };
+
+const historyGamesSuccess = (data) => { //add
+  app.game = data.game;
+  console.log(app);
+};
+
+
 module.exports = {
   success,
   failure,
   newGameSuccess,
+  // updateGameSuccess,
+  getGameByIdSuccess,
+  historyGamesSuccess,
+  joinGameSuccess,
 };

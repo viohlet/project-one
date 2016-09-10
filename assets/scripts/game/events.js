@@ -5,27 +5,33 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
+// const onUpdateGame = function onUpdateGame(marker, index, over1){   /// what do i do with you?
+// 	event.preventDefault();
+// 	api.updateGame(marker, index, over1)
+//     .done(ui.updateGameSuccess)
+//     .fail(ui.failure);
+// };
+
 const onHistoryGames = function (event) {
   event.preventDefault();
   api.historyGames()
-  .done(ui.success)
-  .fail(ui.failure);
+    .done(ui.success)
+    .fail(ui.failure);
 };
 
-// const onJoinGame = function (event) {
-// 	let data = getFormFields(this);
-// 	event.newGame();
-// 	api.signUp(data)
-// 	.done(ui.success)
-// 	.fail(ui.failure);
-// }
+const onJoinGame = function (event) {
+  event.preventDefault();
+  api.joinGame()
+    .done(ui.joinGameSuccess)
+    .fail(ui.failure);
+  };
 
 const onNewGame = function (event) {
   let data = getFormFields(this);
   event.newGame();
   api.signUp(data)
-  .done(ui.success)
-  .fail(ui.failure);
+    .done(ui.success)
+    .fail(ui.failure);
 };
 
 const onGetGameById = function (event) {
@@ -36,10 +42,12 @@ const onGetGameById = function (event) {
 	  .fail(ui.failure);
 };
 
+
+
 let turnTracker = 0;
 let marker = ' ';
 let index;
-let over = false;
+let over1 = false;
 let currentPlayer = ' ';
 let boardArray = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
 
@@ -57,28 +65,29 @@ let checkForWin = function () {
 		marker === boardArray[2] && marker === boardArray[4] && marker === boardArray[6] )
     {
 			win = true;
-			over = true;
 			// $('.user-message').text('X IS VICTORIOUS!');
 
 			console.log("winner is " + marker);
 			// console.log("over is" + " "+ over);
 			// console.log("winner is " +marker);
 		}
-    return win;
-	};
+      over1 = true;
+  };
 
 //Draw conditions
 let checkForDraw = function(){
 	let draw = false;
-	if(turnTracker === 8){
+	if(turnTracker === 9)
+  {
 		draw = true;
-		over = true;
-		// console.log("over is" + " " + over);
-	} else {
+		over1 = true;
+		console.log("tie is" + " " + over1);
+	}
+  else {
 		draw = false;
 	}
 	// console.log("over should be true");
-	return draw;
+	 return draw;
 };
 
 
@@ -118,7 +127,8 @@ const addHandlers = () => {
 	$('#newGame').on('submit', onNewGame);
 	$('#historyGames').on('submit', onHistoryGames);
 	$('#getGameById').on('submit', onGetGameById);
-	// $('#joinGame').on('submit', onJoinGame);
+	$('#joinGame').on('submit', onJoinGame);
+  // $('#updateGame').on('submit', onUpdateGame);
 };
 
 
@@ -127,7 +137,7 @@ module.exports = {
   turnTracker,
   marker,
   index,
-  over,
+  over1,
   currentPlayer,
   boardArray,
   addHandlers,

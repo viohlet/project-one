@@ -7,6 +7,21 @@ const app = require('../app');
 //this way we can share data from one file and share
 //among all the different files that depend on that data
 
+const signInSuccess = (data) => {
+  app.user = data.user; //can use app.user or app.token. we know this because the
+  console.log(app);
+  $('.app').css("display", "block"); //even though we did not define one. User contains the
+  $('.space').text('');
+  $('h1').text('');   //console in browser told us that we have the key user
+                      //even though we did not define one. User contains the
+};                    //token that we care about
+
+const signOutSuccess = () =>{
+  delete app.user;
+  console.log(app);
+  $('.app').css("display", "none");
+};
+
 const success = (data) => {
   if(data){
   console.log(data);
@@ -17,51 +32,9 @@ const failure = (error) => {
   console.error(error);
 };
 
-
-// const newGameSuccess = (data) => {
-//   app.game = data.game;
-//   console.log(app);
-// };
-
-const signInSuccess = (data) => {
-  app.user = data.user; //can use app.user or app.token. we know this because the
-  console.log(app);
-  $('.main').css("display", "block"); //even though we did not define one. User contains the
-  $('.space').text('');
-  $('h1').text('');   //console in browser told us that we have the key user
-                      //even though we did not define one. User contains the
-};                    //token that we care about
-
-const signOutSuccess = () =>{
-  delete app.user;
-  console.log(app);
-  $('.main').css("display", "none");
-};
-
-// const updateGameSuccess = (data) => {
-//   app.game = data.game;
-//   console.log(app.game);
-// };
-
-// const getGameByIdSuccess = (data) => {
-//   app.game = data.game;
-//   $(".get-id-append").append('<h1>'+ data.game.player_x.email + '  was the player'+ '</h1>');
-//   console.log(data);
-
-//   const getGameSuccess = (data) => {
-//     if(data.games){
-//       console.log(data.games);
-//   } else{
-//     console.log('fail');
-//   }
-// };
-
 module.exports = {
   failure,
   success,
   signInSuccess,
   signOutSuccess,
-  // newGameSuccess,
-  // updateGameSuccess,
-  // getGameByIdSuccess
 };

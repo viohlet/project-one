@@ -34,11 +34,19 @@ const newGame = () => {
     }});
 };
 
+const joinGame = function (data) {
+  return $.ajax({
+    url: app.api+ '/games/' + data.game.id,
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    }});
+};
 
 
 module.exports = {
   newGame,
   getGameById,
   historyGames,
-  // joinGame,
+  joinGame,
 };
