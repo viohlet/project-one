@@ -47,63 +47,9 @@ const signOut = () => {
   });
 };
 
-//ajax request to create a new game attached to the current user
-const newGame = (data) => {
-  return $.ajax({
-    url: app.api + 'games',
-    method: "POST",
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-  },
-  data,
-});
-};
-
-//ajax request to get all games user has played
-const getGames = () => {
-  return $.ajax({
-    url: app.api + 'games',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-  }});
-};
-
-//ajax request to get a single game by ID that is associated with the user
-const getGame = (data) => $.ajax({
-  url: app.api + 'games/' + data.id,
-  method: 'GET',
-  headers: {
-    Authorization: 'Token token=' + app.user.token,
-  },
-});
-
-const update = (i, v, g) => $.ajax({
-  url: app.api + 'games/' + app.game.id,
-  method: 'PATCH',
-  headers: {
-    Authorization: 'Token token=' + app.user.token,
-  },
-  data: {
-   "game": {
-     "cell": {
-       "index": index,
-       "value": value,
-     },
-     "over": over1,
-   }
-  }
-});
-
-
-
 module.exports = {
   signIn,
   signUp,
   signOut,
   changePassword,
-  newGame,
-  getGames,
-  getGame,
-  update,
 };

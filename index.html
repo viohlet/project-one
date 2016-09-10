@@ -4,6 +4,9 @@
 
   <head>
     <title>Tic Tac Toe</title>
+    <!-- //DEPLOY YOUR APLICATION WUT 0000000000000000000000000000000000000-->
+    <!-- REQUIREMENTS WTFFFFFFFF https://github.com/ga-wdi-boston/game-project -->
+    <!-- EASIEST AJAX IS TO HISTORY -->
 
     <!-- <link rel="Stylesheet" href="index.scss" type="text/css" />
     <!- <script src="http://tic-tac-toe.wdibos.com/"></script> -->
@@ -54,25 +57,44 @@
 <!-- BOARD DIV -->
 <!-- <input value=" " class="0" type="button" style="font-size:18pt;height:150px;width:150px" onClick='tic(this) /'> -->
 
-    <div class="board">
-      <form name="f1">
+
+      <!-- <form name="board">
         <div class= 'row1'>
-            <input value=" " id="0" name=b00 class="tile" type="button" style="font-size:18pt;height:160px;width:160px" onClick='boardArray( )' />
-            <input value=" " id="1" name=b01 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px" onClick='boardArray( )' />
-            <input value=" " id="2" name=b02 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px" onClick='boardArray( )' />
+            <input value=" " data-id="0" name=b00 class="tile" type="button" style="font-size:18pt;height:160px;width:160px">
+            <input value=" " data-id="1" name=b01 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
+            <input value=" " data-id="2" name=b02 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
         </div>
         <div class= 'row2'>
-            <input value=" " id="3" name=b10 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px" onClick='boardArray( )' />
-            <input value=" " id="4" name=b11 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px" onClick='boardArray( )' />
-            <input value=" " id="5" name=b12 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px" onClick='boardArray( )' />
+            <input value=" " data-id="3" name=b10 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
+            <input value=" " data-id="4" name=b11 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
+            <input value=" " data-id="5" name=b12 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
         </div>
         <div class= 'row3'>
-            <input value=" " id="6" name=b20 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px" onClick='boardArray( )' />
-            <input value=" " id="7" name=b21 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px" onClick='boardArray( )' />
-            <input value=" " id="8" name=b22 class="tile" type="button" style="font-size:18pt;height:160px;width:160px" onClick='boardArray( )' />
-        </div>
+            <input value=" " data-id="6" name=b20 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
+            <input value=" " data-id="7" name=b21 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
+            <input value=" " data-id="8" name=b22 class="tile" type="button" style="font-size:18pt;height:160px;width:160px">
+
       </form>
-    </div>
+
+    </div> -->
+
+    <div class="board">
+     <div class="row">
+       <div class= "col-xs-4 tile" data-id=0></div>
+       <div class = "col-xs-4 tile" data-id=1></div>
+       <div class = "col-xs-4 tile" data-id=2></div>
+     </div>
+     <div class="row">
+       <div class = "col-xs-4 tile" data-id=3></div>
+       <div class = "col-xs-4 tile" data-id=4></div>
+       <div class = "col-xs-4 tile" data-id=5></div>
+     </div>
+     <div class="row">
+       <div class = "col-xs-4 tile" data-id=6></div>
+       <div class = "col-xs-4 tile" data-id=7></div>
+       <div class = "col-xs-4 tile" data-id=8></div>
+     </div>
+   </div>
 <!-- END OF BOARD DIV -->
 
 
@@ -96,7 +118,18 @@
 
       <h1>SAVE GAME</h1>
 
-      <h1>Reset Game</h1>
+      <form id= "historyGames">
+        <button type="submit" name="submit" class="btn btn-default">History of Games</button>
+      </form>
+
+      <form id= "getGameById">
+        <input type="text" name="game[id]" id="game-id" placeholder="Game ID">
+        <button type="submit" name="submit" class="btn btn-default">Find Game</button>
+      </form>
+
+      <form id= "newGame">
+        <button type="submit" name="submit" class="btn btn-default">New Games</button>
+      </form>
 
       <form id="sign-out">
         <fieldset>

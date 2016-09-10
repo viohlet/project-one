@@ -1,37 +1,24 @@
 'use strict';
+const getFormFields = require(`../../../lib/get-form-fields`);
 
-const xWins = require('../../../moves');
-const oWins = require('../../../moves');
-const getFormFields = require('../../../lib/get-form-fields');
-
-const array = require('../ui.js');
 const api = require('./api');
 const ui = require('./ui');
 
-//prevents page from refreshing and calls a function from ./api
-//the function it calls from ./api sends an ajax request to sign a new user up
 const onSignUp = function (event) {
-  event.preventDefault();
   let data = getFormFields(this);
+  event.preventDefault();
   api.signUp(data)
-    .done(ui.success)
-    .fail(ui.failure);
+  .done(ui.success)
+  .fail(ui.failure);
+};
+const onSignIn = function (event) {
+  let data = getFormFields(this);
+  event.preventDefault();
+  api.signIn(data)
+  .done(ui.signInSuccess)
+  .fail(ui.failure);
 };
 
-//prevents page from refreshing and calls function from ./api
-//the function it calls from ./api checks to see if user exists, if they do it
-//logs them in
-const onSignIn = function (event) {
-  event.preventDefault();
-  let data = getFormFields(this);
-  api.signIn(data)
-    .done(ui.signInSuccess)
-    .fail(ui.failure);
-  };
-
-//prevents page from refreshing and calls function from ./api
-//the function it calls from ./api checks to see if old password is correct. if
-//it is it changes the value to the new password
 const onChangePassword = function onChangePassword(event) {
   let data = getFormFields(this);
   console.log(data);
@@ -39,11 +26,9 @@ const onChangePassword = function onChangePassword(event) {
   api.changePassword(data)
   .done(ui.success)
   .fail(ui.failure);
-  };
+};
 
-//prevents page from refreshing and calls function from ./api
-//the function it calls from ./api deletes the token attached to the user
-const onSignOut = function onSignOut(event){
+const onSignOut = function onSignOut(event) {
   event.preventDefault();
   api.signOut()
   .done(ui.signOutSuccess)
@@ -51,52 +36,43 @@ const onSignOut = function onSignOut(event){
 };
 
 
-//prevents page from refreshing and calls function from ./api
-//the function it calls from ./api creates a new game with unique game id and
-//attaches it to the user logged in
-const onNewGame = function onNewGame(event){
-  event.preventDefault();
-  $('.tile').text('');
-  $('.tile').data('val', '0');
-  let data = {};
-  api.newGame(data)
-    .done(ui.newGameSuccess)
-    .fail(ui.failure);
-};
-
-const onGetGames = function onGetGames(event){
-  event.preventDefault();
-  api.getGames()
-    .done(ui.getGamesSuccess)
-    .fail(ui.failure);
-};
-
-const onGetGame = function onGetGame(event){
+const onGetGameById = function onGetGameById(event) {
   let data = getFormFields(this);
   console.log(data.id);
-  array.boardArray = data.cells;
   event.preventDefault();
-  api.getGame(data)
-    .done(ui.getGameSuccess)
+  api.getGameById(data)
+    .done(ui.getGameByIdSuccess)
     .fail(ui.failure);
 };
 
-const boardArray = function(){
-  console.log("xWins, oWins");
+const onNewGame = function (event) {
+  event.preventDefault();
+  api.newGame()
+  .done(ui.newGameSuccess)
+  .fail(ui.failure);
 };
+const onUpdateGame = function onUpdateGame(marker, index, over) {
+	  event.preventDefault();
+	  api.updateGame(marker, index, over)
+    .done(ui.updateGameSuccess)
+    .fail(ui.failure);
+	};
+
+
 
 
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp);
-  $('#sign-in').on('submit', onSignIn);
+  $('#player-sign-up').on('submit', onSignUp);
+  $('#player-sign-in').on('submit', onSignIn); //grab element from the dom with element
   $('#change-password').on('submit', onChangePassword);
-  $('.other-sign-out').on('click', onSignOut);
+  $('#sign-out').on('submit', onSignOut);    //id on sign-up. Then does something
+  $('#game-id').on('submit', onGetGameById);
   $('.new-game').on('click', onNewGame);
-  $('#get-games').on('click', onGetGames);
-  $('#game-by-id').on('submit', onGetGame);
-  $(".tile").on('click', boardArray);
-  };
 
+
+
+};
 module.exports = {
   addHandlers,
+  onUpdateGame
 };
