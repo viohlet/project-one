@@ -5,7 +5,6 @@
   <head>
     <title>Tic Tac Toe</title>
     <!-- //DEPLOY YOUR APLICATION WUT 0000000000000000000000000000000000000-->
-    <!-- REQUIREMENTS WTFFFFFFFF https://github.com/ga-wdi-boston/game-project -->
     <!-- EASIEST AJAX IS TO HISTORY -->
 
     <!-- <link rel="Stylesheet" href="index.scss" type="text/css" />
@@ -91,7 +90,7 @@
           <!-- Change Password Modal -->
           <div class= cambiopass>
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-            data-target="#cambiopass">Register</button>
+            data-target="#cambiopass">Change Password</button>
               <!-- Modal -->
               <div id="cambiopass" class="modal fade" role="dialog">
                 <div class="cambiopass-dialog">
@@ -178,16 +177,20 @@
     </div>
 
 <!-- byeScreen DIV -->
+
     <div class= "byeScreen">
 
       <form id= "newGame">
-        <button type="submit" name="newGame" class="btn btn-default">New Game</button>
+        <button type="submit" name="newGame" class="btn btn-primary"
+        aria-pressed="false" autocomplete="off">New Game</button>
       </form>
 
-      <form id= "joinGame">
+
+
+      <!-- <form id= "joinGame">
         <button type="submit" name="submit" class="btn btn-default">Challenge Someone</button>
         <input type="text" name="join[id]" id="join-id" placeholder="Something here">
-      </form>
+      </form> -->
 
       <form id= "getGameById">
         <input name=getGameById type="number" placeholder="Game ID">
