@@ -139,11 +139,7 @@ else {
 
 };
 
-// const myModal = function(event) {
-//   if (checkForWin () && checkForDraw() === true) {
-//     let = modal.id;
-//   })
-// };
+
 
 
 const addHandlers = () => {
@@ -156,12 +152,6 @@ const addHandlers = () => {
   $('.overlay').on('click', onNewGame);
 };
 
-// let checkForWin = function (event){
-    // $('.overlay').hide();}
-  //
-  // const showOverlay = function (event)
-  //   if (checkForWin() = true)
-  //   { $('.overlay').hide();}
 
 module.exports = {
   onClickTile,

@@ -2,7 +2,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 // $background-color: #4e4e4e;
-$font-color: #dfdfdf;
+$font-color: #FFB828;
 // $unit: 30px;
 // $width: (4 * $unit);
 // $height: (4 * $unit);
@@ -16,6 +16,23 @@ body {
   color: $font-color;
   text-align: center;
 }
+
+
+label {
+  float: left;
+}
+
+input {
+    // width: 20%;
+    // box-sizing:border-box;
+}
+
+span {
+  display: block;
+  overflow: hidden;
+}
+
+
 
 .row > .col-xs-4 {
   border: 2px solid $font-color;
@@ -36,25 +53,48 @@ body {
 .board {
   margin: 0 40%;
   text-align: center;
-}
+ }
 
 // .navbar-right {
 //   margin: 10px;
 // }
-//
-// .message {
-//   background-color: #00f;
-//   display: none;
-//   height: 100%;
-//   left: 0;
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   z-index: 100;
-//   text-align: center;
-// }
 
+.message {
+  background-color: #00f;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+}
 
+.btnstyle {
+  border-top: 2px solid #a3ceda;
+  border-left: 2px solid #a3ceda;
+  border-right: 2px solid #4f6267;
+  border-bottom: 2px solid #4f6267;
+  padding: 10px 20px !important;
+  font-size: 14px !important;
+  background-color: #b2cdf3;
+  font-weight: bold;
+  color: #2d525d;
+  }
+
+.hibtnstyle {
+  border-top: 2px solid #a3ceda;
+  border-left: 2px solid #a3ceda;
+  border-right: 2px solid #4f6267;
+  border-bottom: 2px solid #4f6267;
+  padding: 10px 20px !important;
+  font-size: 20px !important;
+  background-color: #6f8eb3;
+  font-weight: bold;
+  color: #2d525d;
+
+  }
 
 // .container-fluid {
 //   background-color: #0f0f0e;

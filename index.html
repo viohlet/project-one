@@ -22,110 +22,133 @@
 
       <h1>Tic-Tac-Toe</h1>
 
-      <!-- Sign-in Modal --> 9090909099
-      <div class= ingresa>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+      <!-- <form id="sign-in">
+        <fieldset>
+          <legend class="hibtnstyle">Log-in</legend>
+          <input type="email" name="credentials[email]" placeholder="Enter your email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" name="submit" value="Next">
+        </fieldset>
+      </form> -->
+<!--
+      <form id="sign-up" action="process.php" method="POST">
+        <fieldset>
+          <legend class="hibtnstyle">Register</legend>
+            <div class="fillbox"> -->
+            <!-- <label>Input</label> -->
+            <!-- <span>
+              <input type="email" name="credentials[email]" placeholder="Enter your email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credential[password_confirmation]" placeholder="Confirm your password">
+              <input type="submit" name="submit" value="Next">
+            </span>
+        </fieldset>
+      </form> -->
+
+    <!-- <form id="change-password" action="process.php" method="POST">
+      <fieldset>
+        <legend class="hibtnstyle">Change Password</legend>
+        <input type="text" name="credentials[email]" placeholder="Enter your email">
+        <input type="password" name="password[old]" placeholder="Old Password">
+        <input type="password" name="password[newn]" placeholder="New Password">
+        <input type="submit" name="submit" value="Next">
+      </fieldset>
+    </form>
+  </div> -->
+
+  <!-- Log-in Modal -->
+        <div class= ingresa>
+        <button type="button" class="hibtnstyle" data-toggle="modal"
         data-target="#ingresa">Log-in</button>
+        <div id="ingresa" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+           <div class="modal-content">
+            <!-- Modal content-->
+              <div class="ingresa-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="ingresa-title">Hi there,</h4>
+              </div>
+              <div class="ingresa-body">
+                <form id="sign-in" action="process.php" method="POST">
+                  <!-- <fieldset> -->
+                    <!-- <legend>Register</legend> -->
+                    <input type="email" name="credentials[email]" placeholder="Your email">
+                    <input type="password" name="credentials[password]" placeholder="Password">
+                    <input type="submit" name="submit" value="Next">
+                  <!-- </fieldset> -->
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Sign-up Modal -->
+        <div class= register>
+        <button type="button" class="hibtnstyle" data-toggle="modal"
+        data-target="#register">Register</button>
           <!-- Modal -->
-          <div class="modal fade" id="ingresa" tabindex="-1" role="dialog" aria-labelledby="ingresaLabel" aria-hidden="true">
-            <div class="ingresa-dialog" role="document">
+          <div id="register" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+             <div class="modal-content">
               <!-- Modal content-->
-              <div class="ingresa-content">
-                <div class="ingresa-header">
-                  <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <!-- <h4 class="ingresa-title">Hi there,</h4> -->
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                  <h4 class="ingresa-title" id="ingresaLabel">Hi there,</h4>
+                <div class="register-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="register-title">Hi there,</h4>
                 </div>
-                <div class="ingresa-body">
-                  <form id="sign-in">
+                <div class="register-body">
+                  <form id="sign-up" action="process.php" method="POST">
                     <!-- <fieldset> -->
-                      <!-- <legend>Log-in</legend> -->
+                      <!-- <legend>Register</legend> -->
                       <input type="email" name="credentials[email]" placeholder="Your email">
                       <input type="password" name="credentials[password]" placeholder="Password">
-                      <!-- <input type="submit" name="submit" value="Next"> -->
+                      <input type="password" name="credential[password_confirmation]" placeholder="Confirm your password">
+                      <input type="submit" name="submit" value="Next">
                     <!-- </fieldset> -->
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Nope</button>
-                  <button type="button" class="btn btn-primary">Next</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- End -->
 
-        <!-- Log-in or Register Modal -->
-        <div class= register>
-          <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-          data-target="#register">Register</button>
-            <!-- Modal -->
-            <div id="register" class="modal fade" role="dialog">
-              <div class="register-dialog">
-                <!-- Modal content-->
-                <div class="register-content">
-                  <div class="register-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="register-title">Hi there,</h4>
-                  </div>
-                  <div class="register-body">
-                    <form id="sign-up" action="process.php" method="POST">
-                      <!-- <fieldset> -->
-                        <!-- <legend>Register</legend> -->
-                        <input type="email" name="credentials[email]" placeholder="Your email">
-                        <input type="password" name="credentials[password]" placeholder="Password">
-                        <input type="password" name="credential[password_confirmation]" placeholder="Confirm your password">
-                        <input type="submit" name="submit" value="Next">
-                      <!-- </fieldset> -->
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
+        <!-- Change Password Modal -->
+        <div class= cambiopass>
+        <button type="button" class="hibtnstyle" data-toggle="modal"
+        data-target="#cambiopass">Change Password</button>
+          <!-- Modal -->
+          <div id="cambiopass" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+             <div class="modal-content">
+              <!-- Modal content-->
+                <div class="cambiopass-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="cambiopass-title">Hi there,</h4>
+                </div>
+                <div class="cambiopass-body">
+                  <form id="change-password" action="process.php" method="POST">
+                    <!-- <fieldset> -->
+                      <!-- <legend>Changeyour Password</legend> -->
+                      <input type="password" name="password[old]" placeholder="Old Password">
+                      <input type="password" name="password[new]" placeholder="New Password">
+                      <input type="submit" name="submit" value="Next">
+                    <!-- </fieldset> -->
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
           </div>
-          <!-- End -->
-
-          <!-- Change Password Modal -->
-          <div class= cambiopass>
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-            data-target="#cambiopass">Change Password</button>
-              <!-- Modal -->
-              <div id="cambiopass" class="modal fade" role="dialog">
-                <div class="cambiopass-dialog">
-                  <!-- Modal content-->
-                  <div class="cambiopass-content">
-                    <div class="cambiopass-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="cambiopass-title">Hi there,</h4>
-                    </div>
-                    <div class="register-body">
-                      <form id="change-password" action="process.php" method="POST">
-                        <!-- <fieldset> -->
-                          <!-- <legend>Changeyour Password</legend> -->
-                          <input type="password" name="password[old]" placeholder="Old Password">
-                          <input type="password" name="password[new]" placeholder="New Password">
-                          <input type="submit" name="submit" value="Next">
-                        <!-- </fieldset> -->
-                      </form>
-                    </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- End -->
-
+        </div>
 
     <h1>Tic Tac Toe</h1>
 
@@ -172,6 +195,9 @@
 
     <h5>Game in progress...</h5>
 
+
+  <!-- <div class="message">  </div> -->
+
 <!-- PLAYER A DIV -->
     <div class="playerA">
       <h2>Player X (you)</h2>
@@ -187,33 +213,30 @@
     <div class= "byeScreen">
 
       <form id= "newGame">
-        <button type="submit" name="newGame" class="btn btn-primary"
-        aria-pressed="false" autocomplete="off">New Game</button>
+        <button type="button" name="newGame" class="btnstyle" aria-pressed="false">New Game</button>
       </form>
 
-
-
       <form id= "joinGame">
-        <button type="submit" name="submit" class="btn btn-default">Challenge Someone</button>
+        <button type="submit" name="submit" class="btnstyle">Challenge Someone</button>
         <input type="text" name="join[id]" id="join-id" placeholder="Something here">
       </form>
 
       <form id= "getGameById">
+        <input type="submit" value="Get Game by ID" class="btnstyle">
         <input name=getGameById type="number" placeholder="Game ID">
-        <input type="submit" value="Get Game by ID">
       </form>
 
       <form id= "historyGames">
-        <button type="submit" name="submit" class="btn btn-default">Saved History</button>
+        <button type="submit" name="submit" class="btnstyle">Saved History</button>
       </form>
       <!-- Feeling like historyGames is index?????  bc we have over1 and value-->
 
       <form id="sign-out">
         <fieldset>
-          <legend>Log-out</legend>
-          <input type="email" name="credentials[email]" placeholder="Enter your email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="submit" name="submit" value="Next">
+          <button type="submit" name="submit" class="btnstyle">Log out</button>
+          <!-- <input type="email" name="credentials[email]" placeholder="Enter your email">
+          <input type="password" name="credentials[password]" placeholder="Password"> -->
+          <!-- <input type="submit" name="submit" value="Next"> -->
         </fieldset>
       </form>
     </div>

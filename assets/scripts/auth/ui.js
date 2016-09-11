@@ -12,6 +12,9 @@ const signInSuccess = (data) => {
   console.log(app);
   $('.app').css("display", "block"); //even though we did not define one. User contains the
   $('.space').text('');
+  // hide sign up button
+  // hide sign in button
+  // show password button
   $('h1').text('');   //console in browser told us that we have the key user
                       //even though we did not define one. User contains the
 };                    //token that we care about
@@ -22,10 +25,14 @@ const signOutSuccess = () =>{
   $('.app').css("display", "none");
 };
 
-// const changePasswordSuccess = () => {
-//   app.user = app.user;
-//   console.log(app);
-// };
+const changePasswordSuccess = (data) => {
+  app.user = data.user;
+  console.log(app);
+};
+
+const signUpSuccess = (data) => {
+ app.user = data.user;
+};
 
 const success = (data) => {
   if(data){
@@ -43,5 +50,6 @@ module.exports = {
   success,
   signInSuccess,
   signOutSuccess,
-  // changePasswordSuccess,
+  changePasswordSuccess,
+  signUpSuccess,
 };
