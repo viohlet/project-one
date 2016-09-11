@@ -5,12 +5,12 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
-// const onUpdateGame = function onUpdateGame(marker, index, over1){   /// what do i do with you?
-// 	event.preventDefault();
-// 	api.updateGame(marker, index, over1)
-//     .done(ui.updateGameSuccess)
-//     .fail(ui.failure);
-// };
+const onUpdateGame = function onUpdateGame(marker, index, over1){   /// what do i do with you?
+	event.preventDefault();
+	api.updateGame(marker, index, over1)
+    .done(ui.updateGameSuccess)
+    .fail(ui.failure);
+};
 
 const onHistoryGames = function (event) {
   event.preventDefault();
@@ -27,9 +27,10 @@ const onJoinGame = function (event) {
   };
 
 const onNewGame = function (event) {
-  let data = getFormFields(this);
-  event.newGame();
-  api.signUp(data)
+  event.preventDefault();
+	let data = getFormFields(this);
+	console.log(data);
+  api.newGame(data)
     .done(ui.success)
     .fail(ui.failure);
 };
@@ -37,12 +38,19 @@ const onNewGame = function (event) {
 const onGetGameById = function (event) {
 	event.preventDefault();
 	let data = getFormFields(event.target);
+	console.log(data);
 	api.getGameById(data)
 		.done(ui.success)
 	  .fail(ui.failure);
 };
 
-
+//
+// const updateGame = 	function (event) {
+//   event.preventDefault();
+//   let tile = $(event.target);
+//   let id = updateGame.boardArray('tile');
+//     if (checkForWin() && checkForDraw());
+// };
 
 let turnTracker = 0;
 let marker = ' ';
@@ -65,9 +73,10 @@ let checkForWin = function () {
 		marker === boardArray[2] && marker === boardArray[4] && marker === boardArray[6] )
     {
 			win = true;
-			// $('.user-message').text('X IS VICTORIOUS!');
-
+      // $('.user-message').text('X IS VICTORIOUS!');
 			console.log("winner is " + marker);
+      // $('.overlay').show (console.log("winner is " + marker));
+      // $('.overlay').show("winner is " + marker);
 			// console.log("over is" + " "+ over);
 			// console.log("winner is " +marker);
 		}
@@ -88,8 +97,8 @@ let checkForDraw = function(){
 	}
 	// console.log("over should be true");
 	 return draw;
-};
 
+};
 
 const onClickTile = function(event) {
 event.preventDefault();
@@ -103,7 +112,6 @@ if ($(this).html() === '') {
     turnTracker++; //will become odd
     checkForWin ();
     checkForDraw ();
-		//updateGame.board
   }
   else {
     marker = "O";
@@ -112,6 +120,10 @@ if ($(this).html() === '') {
     turnTracker++;
 		checkForWin ();
     checkForDraw ();
+    // $('#message').innerHTML;
+    // updateGame.boardArray();
+    // $('.overlay').show();
+    // // $('.overlay').hide();
   }
   // console.log(boardArray);
 }
@@ -122,15 +134,29 @@ else {
 
 };
 
+// const myModal = function(event) {
+//   if (checkForWin () && checkForDraw() === true) {
+//     let = modal.id;
+//   })
+// };
+
+
 const addHandlers = () => {
   $('.tile').on('click', onClickTile);
 	$('#newGame').on('submit', onNewGame);
 	$('#historyGames').on('submit', onHistoryGames);
 	$('#getGameById').on('submit', onGetGameById);
 	$('#joinGame').on('submit', onJoinGame);
-  // $('#updateGame').on('submit', onUpdateGame);
+  $('#updateGame').on('submit', onUpdateGame);
+  $('.overlay').on('click', onNewGame);
 };
 
+// let checkForWin = function (event){
+    // $('.overlay').hide();}
+  //
+  // const showOverlay = function (event)
+  //   if (checkForWin() = true)
+  //   { $('.overlay').hide();}
 
 module.exports = {
   onClickTile,
@@ -141,4 +167,6 @@ module.exports = {
   currentPlayer,
   boardArray,
   addHandlers,
+  // updateGame,
+  // myModal,
 };

@@ -7,7 +7,7 @@
 
 const historyGames = () => {
   return $.ajax({
-    url: app.api + '/games/',
+    url: app.host + '/games/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -17,7 +17,7 @@ const historyGames = () => {
 
 const getGameById = function (data){
   return $.ajax({
-    url: app.api + '/games/' + data.game.id,
+    url: app.host + '/games/' + data.getGameById,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -27,7 +27,7 @@ const getGameById = function (data){
 
 const newGame = () => {
   return $.ajax({
-    url: app.api+ '/games',
+    url: app.host+ '/games',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -36,7 +36,7 @@ const newGame = () => {
 
 const joinGame = function (data) {
   return $.ajax({
-    url: app.api+ '/games/' + data.game.id,
+    url: app.host+ '/games/' + data.game.id,
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + app.user.token,

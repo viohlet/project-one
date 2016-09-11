@@ -3,7 +3,7 @@
 
 //declare variable app with key api that has a value of our server location
 const app = {
-  api: 'http://tic-tac-toe.wdibos.com/',
+  host: 'http://tic-tac-toe.wdibos.com/',
   // user: {
     //id: ?
     //email: ?

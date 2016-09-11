@@ -22,6 +22,11 @@ const signOutSuccess = () =>{
   $('.app').css("display", "none");
 };
 
+// const changePasswordSuccess = () => {
+//   app.user = app.user;
+//   console.log(app);
+// };
+
 const success = (data) => {
   if(data){
   console.log(data);
@@ -32,9 +37,11 @@ const failure = (error) => {
   console.error(error);
 };
 
+
 module.exports = {
   failure,
   success,
   signInSuccess,
   signOutSuccess,
+  // changePasswordSuccess,
 };

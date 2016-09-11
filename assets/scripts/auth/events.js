@@ -8,16 +8,16 @@ const onSignUp = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
   api.signUp(data)
-  .done(ui.success)
-  .fail(ui.failure);
+    .done(ui.success)
+    .fail(ui.failure);
 };
 
 const onSignIn = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
   api.signIn(data)
-  .done(ui.signInSuccess)
-  .fail(ui.failure);
+    .done(ui.signInSuccess)
+    .fail(ui.failure);
 };
 
 const onChangePassword = function onChangePassword(event) {
@@ -25,15 +25,15 @@ const onChangePassword = function onChangePassword(event) {
   console.log(data);
   event.preventDefault();
   api.changePassword(data)
-  .done(ui.success)
-  .fail(ui.failure);
+    .done(ui.success)
+    .fail(ui.failure);
 };
 
 const onSignOut = function onSignOut(event) {
   event.preventDefault();
   api.signOut()
-  .done(ui.signOutSuccess)
-  .fail(ui.failure);
+    .done(ui.signOutSuccess)
+    .fail(ui.failure);
 };
 
 
