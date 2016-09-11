@@ -15,12 +15,12 @@ const newGameSuccess = (data) => {
   console.log(app.game);
 };
 
-const joinGameSuccess = (data) => { ///add?
-  app.game = data.game;
-  console.log(app.game);
-};
+// const joinGameSuccess = (data) => { ///add?
+//   app.game = data.game;
+//   console.log(app.game);
+// };
 
-const updateGameSuccess = (data) => {
+const updateGameSuccess = (data) => { ////////////////////////
   app.game = data.game;
   console.log(app.game);
 };
@@ -31,26 +31,10 @@ const getGameByIdSuccess = (data) => {
   console.log(data);
 };
 
-// $('#cambiopass').on('click', function () {
-//   $(this).button('complete') // button text will be "finished!"
+// const historyGamesSuccess = (data) => { //add
+//   app.game = data.game;
+//   console.log(app);
 // };
-
-// $('#cambiopass').on('shown.bs.modal', function () {
-//   $('#cambiopass').focus();
-// });
-
-//   const getGameSuccess = (data) => {
-//     if(data.games){
-//       console.log(data.games);
-//   } else{
-//     console.log('fail');
-//   }
-// };
-
-const historyGamesSuccess = (data) => { //add
-  app.game = data.game;
-  console.log(app);
-};
 
 
 module.exports = {
@@ -59,6 +43,6 @@ module.exports = {
   newGameSuccess,
   updateGameSuccess,
   getGameByIdSuccess,
-  historyGamesSuccess,
-  joinGameSuccess,
+  // historyGamesSuccess,
+  // joinGameSuccess,
 };

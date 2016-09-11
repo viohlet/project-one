@@ -57,37 +57,39 @@
   </div> -->
 
   <!-- Log-in Modal -->
-        <div class= ingresa>
-        <button type="button" class="hibtnstyle" data-toggle="modal"
-        data-target="#ingresa">Log-in</button>
-        <div id="ingresa" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-           <div class="modal-content">
-            <!-- Modal content-->
-              <div class="ingresa-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="ingresa-title">Hi there,</h4>
-              </div>
-              <div class="ingresa-body">
-                <form id="sign-in" action="process.php" method="POST">
-                  <!-- <fieldset> -->
-                    <!-- <legend>Register</legend> -->
-                    <input type="email" name="credentials[email]" placeholder="Your email">
-                    <input type="password" name="credentials[password]" placeholder="Password">
-                    <input type="submit" name="submit" value="Next">
-                  <!-- </fieldset> -->
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <br/>
+          <div class= ingresa>
+          <button type="button" class="hibtnstyle" data-toggle="modal"
+          data-target="#ingresa">Log-in</button>
+          <div id="ingresa" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+             <div class="modal-content">
+              <!-- Modal content-->
+                <div class="ingresa-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="ingresa-title">Hi there,</h4>
+                </div>
+                <div class="ingresa-body">
+                  <form id="sign-in" action="process.php" method="POST">
+                    <!-- <fieldset> -->
+                      <!-- <legend>Register</legend> -->
+                      <input type="email" name="credentials[email]" placeholder="Your email">
+                      <input type="password" name="credentials[password]" placeholder="Password">
+                      <input type="submit" name="submit" value="Next">
+                    <!-- </fieldset> -->
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
 
       <!-- Sign-up Modal -->
+        </br>
         <div class= register>
         <button type="button" class="hibtnstyle" data-toggle="modal"
         data-target="#register">Register</button>
@@ -120,6 +122,7 @@
         </div>
 
         <!-- Change Password Modal -->
+        <br/>
         <div class= cambiopass>
         <button type="button" class="hibtnstyle" data-toggle="modal"
         data-target="#cambiopass">Change Password</button>
@@ -136,6 +139,7 @@
                   <form id="change-password" action="process.php" method="POST">
                     <!-- <fieldset> -->
                       <!-- <legend>Changeyour Password</legend> -->
+                      <input type="email" name="credentials[email]" placeholder="Your email">
                       <input type="password" name="password[old]" placeholder="Old Password">
                       <input type="password" name="password[new]" placeholder="New Password">
                       <input type="submit" name="submit" value="Next">
@@ -149,8 +153,11 @@
             </div>
           </div>
         </div>
+      </div>
 
-    <h1>Tic Tac Toe</h1>
+    <br/>
+    <br/>
+    <h1> </h1>
 
 <!-- <input value=" " class="0" type="button" style="font-size:18pt;height:150px;width:150px" onClick='tic(this) /'> -->
 
@@ -192,45 +199,36 @@
      </div>
    </div>
 
+<!-- <div class="message">  </div> -->
 
-    <h5>Game in progress...</h5>
-
-
-  <!-- <div class="message">  </div> -->
+   <div class="messagetie">  blah </div>
+   <div class="messagewin">  blah  </div>
 
 <!-- PLAYER A DIV -->
-    <div class="playerA">
+    <!-- <div class="playerA">
       <h2>Player X (you)</h2>
-    </div>
+    </div> -->
 
 <!-- PLAYER B DIV -->
-    <div class="playerB">
+    <!-- <div class="playerB">
       <h2>Player O</h2>
-    </div>
+    </div> -->
 
 <!-- byeScreen DIV -->
 
     <div class= "byeScreen">
-
+      <br/>
+      <br/>
       <form id= "newGame">
         <button type="button" name="newGame" class="btnstyle" aria-pressed="false">New Game</button>
       </form>
 
-      <form id= "joinGame">
-        <button type="submit" name="submit" class="btnstyle">Challenge Someone</button>
-        <input type="text" name="join[id]" id="join-id" placeholder="Something here">
-      </form>
-
-      <form id= "getGameById">
-        <input type="submit" value="Get Game by ID" class="btnstyle">
-        <input name=getGameById type="number" placeholder="Game ID">
-      </form>
-
+      <!-- <br/>
       <form id= "historyGames">
         <button type="submit" name="submit" class="btnstyle">Saved History</button>
-      </form>
-      <!-- Feeling like historyGames is index?????  bc we have over1 and value-->
+      </form> -->
 
+      <br/>
       <form id="sign-out">
         <fieldset>
           <button type="submit" name="submit" class="btnstyle">Log out</button>
@@ -239,6 +237,20 @@
           <!-- <input type="submit" name="submit" value="Next"> -->
         </fieldset>
       </form>
+<!--
+      <br/>
+      <form id= "joinGame">
+        <button type="submit" name="submit" class="btnstyle">Challenge Someone</button>
+      <input type="text" name="join[id]" id="join-id" placeholder="Something here">
+      </form> -->
+
+      <br/>
+      <form id= "getGameById">
+        <input type="submit" value="Get Game by ID" class="btnstyle">
+        <input name=getGameById type="number" placeholder="Game ID">
+      </form>
+      <br/>
+      <br/>
     </div>
 
   </body>

@@ -12,27 +12,35 @@ const onUpdateGame = function onUpdateGame(marker, index, over1){   /// what do 
     .fail(ui.failure);
 };
 
-const onHistoryGames = function (event) {
-  event.preventDefault();
-  api.historyGames()
-    .done(ui.success)
-    .fail(ui.failure);
-};
+// const onHistoryGames = function (event) {
+//   event.preventDefault();
+//   api.historyGames()
+//     .done(ui.success)
+//     .fail(ui.failure);
+// };
+//
+// const onJoinGame = function (event) {
+//   event.preventDefault();
+//   api.joinGame()
+//     .done(ui.joinGameSuccess)
+//     .fail(ui.failure);
+//   };
 
-const onJoinGame = function (event) {
-  event.preventDefault();
-  api.joinGame()
-    .done(ui.joinGameSuccess)
-    .fail(ui.failure);
-  };
+// const onNewGame = function (boardArray) {
+//   event.preventDefault();
+// 	let data = getFormFields(event.target);
+// 	// let data = getFormFields(this);
+// 	console.log(data);
+//   api.newGame.boardArray(data)
+//     .done(ui.success)
+//     .fail(ui.failure);
+// };
 
-const onNewGame = function (event) {
+const onNewGame = function (event) {   //////////////////////
   event.preventDefault();
-	let data = getFormFields(this);
-	console.log(data);
-  api.newGame(data)
-    .done(ui.success)
-    .fail(ui.failure);
+  api.newGame()
+  .done(ui.newGameSuccess)
+  .fail(ui.failure);
 };
 
 const onGetGameById = function (event) {
@@ -44,18 +52,7 @@ const onGetGameById = function (event) {
 	  .fail(ui.failure);
 };
 
-//
-// $('#ingresa').on('shown.bs.modal', function () {
-//   $('#ingresa').focus();
-// });
 
-//
-// const updateGame = 	function (event) {
-//   event.preventDefault();
-//   let tile = $(event.target);
-//   let id = updateGame.boardArray('tile');
-//     if (checkForWin() && checkForDraw());
-// };
 
 let turnTracker = 0;
 let marker = ' ';
@@ -125,29 +122,33 @@ if ($(this).html() === '') {
     turnTracker++;
 		checkForWin ();
     checkForDraw ();
-    // $('#message').innerHTML;
     // updateGame.boardArray();
     // $('.overlay').show();
     // // $('.overlay').hide();
   }
   // console.log(boardArray);
 }
-
-else {
-  console.log('Not empty!'); //in the future add a message;
-}
+	else {
+	  console.log('Not empty!'); //in the future add a message;
+	}
 
 };
 
-
+// const displayWinner = function () {
+//   if (marker === null) {
+//     $('.messagetie').html("It's a tie!");
+//   } else if (marker){
+//   $('.messagewin').html('' + marker + ' has won the game.');
+//   }
+// };
 
 
 const addHandlers = () => {
   $('.tile').on('click', onClickTile);
 	$('#newGame').on('submit', onNewGame);
-	$('#historyGames').on('submit', onHistoryGames);
+	// $('#historyGames').on('submit', onHistoryGames);
 	$('#getGameById').on('submit', onGetGameById);
-	$('#joinGame').on('submit', onJoinGame);
+	// $('#joinGame').on('submit', onJoinGame);
   $('#updateGame').on('submit', onUpdateGame);
   $('.overlay').on('click', onNewGame);
 };
@@ -162,6 +163,7 @@ module.exports = {
   currentPlayer,
   boardArray,
   addHandlers,
+	// displayWinner,
   // updateGame,
   // myModal,
 };
