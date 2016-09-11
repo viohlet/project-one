@@ -45,6 +45,11 @@ const onGetGameById = function (event) {
 };
 
 //
+// $('#ingresa').on('shown.bs.modal', function () {
+//   $('#ingresa').focus();
+// });
+
+//
 // const updateGame = 	function (event) {
 //   event.preventDefault();
 //   let tile = $(event.target);
