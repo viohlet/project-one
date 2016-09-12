@@ -41,6 +41,14 @@ Tic tac toe game by VV
     - OK to ask questions! If it wasn't because of some of my classmates ( Katie, Ben M., James, Jen, Kathryn, Lauren, Christina, Julie, Ben L.) I would be lost.
     - How not to stress: If I was stuck for a long time, I would continue to work on another issue to be stuck in :p, so it's OK to move on with life!
     -Almost forgot: MODALS! Solution: spending 4-5 hrs on it.
+    
+- User Stories
+   +    User to want a "log in" and "sign up" buttons.
+   +    User to want an "alarm" or reminder sound to go back to the game and make
+   +    the next move.
+   +    User to want a "save game" option to look back at those matches.
+   +    User to want a "re-match" and "??? WINS!" buttons.
+   +    User to want to be identified as "Player A" or "Player B".
 
 - Unsolved Problems:
 
@@ -50,4 +58,4 @@ Tic tac toe game by VV
   - Didn't get to even try my sound features to let know each player it was their turn.
   - I wanted to add more "old-school" styling features but never got it. Only the buttons and background.
   - I had a plan to make players challenge others, and look at a history of games. Both left halfway.
-  - Will edit links of wireframes, and user stories. -No time and need to deploy. :(
+  - Will edit links of wireframes since I had it on paper. -No time and need to deploy. :(
