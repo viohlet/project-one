@@ -1,10 +1,10 @@
 Tic tac toe game by VV
 
-- Click here to access my game!
+- Access my game! https://viohlet.github.io/project-one/ 
 - Technologies used:
 
   - Ajax
-  - Bootstrap*
+  - Bootstrap
   - JQuery
   - JavaScript
   - CSS
@@ -38,8 +38,9 @@ Tic tac toe game by VV
 
     - Adding a locally sourced image to my site: I was ok with the url but quickly remember how we are not supposed to do that, and so turns out "url(prince.jpg)" works as long as the image is in your styling folder.
     - My buttons did not work, and never worked. I would very much like to make a change at a later date and have them work properly.
-    - OK to ask questions! If it wasn't because of some of my classmates ( x ) I would be lost.
+    - OK to ask questions! If it wasn't because of some of my classmates ( Katie, Ben M., James, Jen, Kathryn, Lauren, Christina, Julie, Ben L.) I would be lost.
     - How not to stress: If I was stuck for a long time, I would continue to work on another issue to be stuck in :p, so it's OK to move on with life!
+    -Almost forgot: MODALS! Solution: spending 4-5 hrs on it.
 
 - Unsolved Problems:
 
@@ -49,4 +50,4 @@ Tic tac toe game by VV
   - Didn't get to even try my sound features to let know each player it was their turn.
   - I wanted to add more "old-school" styling features but never got it. Only the buttons and background.
   - I had a plan to make players challenge others, and look at a history of games. Both left halfway.
-  - Will edit links of website and wireframes, and user stories. -No time and need to deploy. :(
+  - Will edit links of wireframes, and user stories. -No time and need to deploy. :(
