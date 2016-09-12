@@ -3,8 +3,6 @@
 const app = require('../app');
 
 
-// BORRA DSPS app.host has been REPLACED BY app.api check
-
 //ajax requesting server a new user
 const signUp = (data) => {
 return $.ajax({

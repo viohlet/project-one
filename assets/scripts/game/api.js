@@ -17,7 +17,7 @@
 
 const getGameById = function (data){
   return $.ajax({
-    url: app.host + '/games/' + data.getGameById,
+    url: app.host + 'games/' + data.getGameById,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -25,34 +25,34 @@ const getGameById = function (data){
   });
 };
 
-const newGame = () => {
-  return $.ajax({
-    url: app.host+ '/games',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    }});
-};
-
-
-const updateGame = function(index, value, over1) {
-  $.ajax({
-    url: app.host + '/games/' + app.game.id,
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-    data: {
-      "game": {
-        "cell": {
-          "index": index,
-          "value": value,
-        },
-        "over1": over1,
-      }
-    }
-  });
-};
+// const newGame = () => {
+//   return $.ajax({
+//     url: app.host+ '/games',
+//     method: 'POST',
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token,
+//     }});
+// };
+//
+//
+// const updateGame = function(index, value, over1) {
+//   $.ajax({
+//     url: app.host + '/games/' + app.game.id,
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token,
+//     },
+//     data: {
+//       "game": {
+//         "cell": {
+//           "index": index,
+//           "value": value,
+//         },
+//         "over1": over1,
+//       }
+//     }
+//   });
+// };
 
 // const joinGame = function (data) {
 //   return $.ajax({
@@ -65,9 +65,9 @@ const updateGame = function(index, value, over1) {
 
 
 module.exports = {
-  newGame,
+  // newGame,
   getGameById,
   // historyGames,
   // joinGame,
-  updateGame,
+  // updateGame,
 };

@@ -4,13 +4,13 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 
 const api = require('./api');
 const ui = require('./ui');
-
-const onUpdateGame = function onUpdateGame(marker, index, over1){   /// what do i do with you?
-	event.preventDefault();
-	api.updateGame(marker, index, over1)
-    .done(ui.updateGameSuccess)
-    .fail(ui.failure);
-};
+//
+// const onUpdateGame = function onUpdateGame(marker, index, over1){   /// what do i do with you?
+// 	event.preventDefault();
+// 	api.updateGame(marker, index, over1)
+//     .done(ui.updateGameSuccess)
+//     .fail(ui.failure);
+// };
 
 // const onHistoryGames = function (event) {
 //   event.preventDefault();
@@ -18,7 +18,7 @@ const onUpdateGame = function onUpdateGame(marker, index, over1){   /// what do 
 //     .done(ui.success)
 //     .fail(ui.failure);
 // };
-//
+
 // const onJoinGame = function (event) {
 //   event.preventDefault();
 //   api.joinGame()
@@ -36,12 +36,12 @@ const onUpdateGame = function onUpdateGame(marker, index, over1){   /// what do 
 //     .fail(ui.failure);
 // };
 
-const onNewGame = function (event) {   //////////////////////
-  event.preventDefault();
-  api.newGame()
-  .done(ui.newGameSuccess)
-  .fail(ui.failure);
-};
+// const onNewGame = function (event) {   //////////////////////
+//   event.preventDefault();
+//   api.newGame()
+//   .done(ui.newGameSuccess)
+//   .fail(ui.failure);
+// };
 
 const onGetGameById = function (event) {
 	event.preventDefault();
@@ -145,12 +145,11 @@ if ($(this).html() === '') {
 
 const addHandlers = () => {
   $('.tile').on('click', onClickTile);
-	$('#newGame').on('submit', onNewGame);
+	// $('#newGame').on('submit', onNewGame);
 	// $('#historyGames').on('submit', onHistoryGames);
 	$('#getGameById').on('submit', onGetGameById);
 	// $('#joinGame').on('submit', onJoinGame);
-  $('#updateGame').on('submit', onUpdateGame);
-  $('.overlay').on('click', onNewGame);
+  // $('#updateGame').on('submit', onUpdateGame);
 };
 
 
