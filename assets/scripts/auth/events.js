@@ -20,12 +20,12 @@ const onSignIn = function (event) {
     .fail(ui.failure);
 };
 
-const onChangePassword = function onChangePassword(event) {
-  let data = getFormFields(this);
-  console.log(data);
+const onChangePassword = function(event) {
   event.preventDefault();
+  let data = getFormFields(event.target);
+  console.log(data);
   api.changePassword(data)
-    .done(ui.success)
+    .done(ui.changePasswordSuccess)
     .fail(ui.failure);
 };
 

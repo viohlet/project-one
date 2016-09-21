@@ -25,8 +25,8 @@ const signOutSuccess = () =>{
   $('.app').css("display", "none");
 };
 
-const changePasswordSuccess = (data) => {
-  app.user = data.user;
+const changePasswordSuccess = () => {
+  // app.user = data.user;
   console.log(app);
 };
 
