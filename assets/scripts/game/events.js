@@ -4,44 +4,17 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 
 const api = require('./api');
 const ui = require('./ui');
-//
-// const onUpdateGame = function onUpdateGame(marker, index, over1){   /// what do i do with you?
-// 	event.preventDefault();
-// 	api.updateGame(marker, index, over1)
-//     .done(ui.updateGameSuccess)
-//     .fail(ui.failure);
-// };
 
-// const onHistoryGames = function (event) {
-//   event.preventDefault();
-//   api.historyGames()
-//     .done(ui.success)
-//     .fail(ui.failure);
-// };
-
-// const onJoinGame = function (event) {
-//   event.preventDefault();
-//   api.joinGame()
-//     .done(ui.joinGameSuccess)
-//     .fail(ui.failure);
-//   };
-
-// const onNewGame = function (boardArray) {
-//   event.preventDefault();
-// 	let data = getFormFields(event.target);
-// 	// let data = getFormFields(this);
-// 	console.log(data);
-//   api.newGame.boardArray(data)
-//     .done(ui.success)
-//     .fail(ui.failure);
-// };
-
-// const onNewGame = function (event) {   //////////////////////
-//   event.preventDefault();
-//   api.newGame()
-//   .done(ui.newGameSuccess)
-//   .fail(ui.failure);
-// };
+const onNewGame = function (event) {
+  event.preventDefault();
+	// console.log();
+	// $('.marker').text('');
+	// $('.marker').data('val', '0');
+	// boardArray[0] === ('');
+  api.newGame()
+  .done(ui.newGameSuccess)
+  .fail(ui.failure);
+};
 
 const onGetGameById = function (event) {
 	event.preventDefault();
@@ -53,13 +26,35 @@ const onGetGameById = function (event) {
 };
 
 
-
 let turnTracker = 0;
 let marker = ' ';
 let index;
 let over1 = false;
 let currentPlayer = ' ';
 let boardArray = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
+let winner;
+// let player = '';
+
+
+const showMessage = function (msg) {
+	document.getElementById("message").innerHTML = msg;
+	$('#message').fadeIn('fast').delay(4000).fadeOut('fast');
+};
+
+const blockPlay = function(){
+	$('.tile').off('click');
+};
+
+// const resetBoard = function (){
+//   $('.tile').empty();
+//   currentPlayer = '';
+//   boardArray = ['','','','','','','','','',];
+//   turnTracker = 0;
+//   over1 = false;
+//   winner = null;
+  // removeBoard();
+  // resumePlay();
+// };
 
 // Win Conditions
 let checkForWin = function () {
@@ -75,14 +70,19 @@ let checkForWin = function () {
 		marker === boardArray[2] && marker === boardArray[4] && marker === boardArray[6] )
     {
 			win = true;
-      // $('.user-message').text('X IS VICTORIOUS!');
+			winner = marker;
 			console.log("winner is " + marker);
       // $('.overlay').show (console.log("winner is " + marker));
       // $('.overlay').show("winner is " + marker);
 			// console.log("over is" + " "+ over);
 			// console.log("winner is " +marker);
+			showMessage('The Winner is ' + winner );
+			blockPlay();
 		}
-      over1 = true;
+  if (over1 === true) {
+		// blockPlay();
+		}
+			// blockPlay();
   };
 
 //Draw conditions
@@ -90,14 +90,17 @@ let checkForDraw = function(){
 	let draw = false;
 	if(turnTracker === 9)
   {
-		draw = true;
 		over1 = true;
-		console.log("tie is" + " " + over1);
+		// blockPlay();
+		// console.log("tie is" + " " + over1);
+		showMessage('It is a tie!');
+		// blockPlay();
 	}
   else {
 		draw = false;
 	}
 	// console.log("over should be true");
+	//  blockPlay();
 	 return draw;
 
 };
@@ -129,9 +132,8 @@ if ($(this).html() === '') {
   // console.log(boardArray);
 }
 	else {
-	  console.log('Not empty!'); //in the future add a message;
+	  showMessage('Not empty!'); //in the future add a message;
 	}
-
 };
 
 // const displayWinner = function () {
@@ -142,10 +144,14 @@ if ($(this).html() === '') {
 //   }
 // };
 
+// const clearBoard = function(){
+// 	if checkForWin = true
+//
+// }
 
 const addHandlers = () => {
   $('.tile').on('click', onClickTile);
-	// $('#newGame').on('submit', onNewGame);
+	$('#newGame').on('submit', onNewGame);
 	// $('#historyGames').on('submit', onHistoryGames);
 	$('#getGameById').on('submit', onGetGameById);
 	// $('#joinGame').on('submit', onJoinGame);

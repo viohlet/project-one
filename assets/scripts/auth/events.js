@@ -39,14 +39,14 @@ const onSignOut = function onSignOut(event) {
 
 
 
-const onGetGameById = function onGetGameById(event) {
-  let data = getFormFields(this);
-  console.log(data.id);
-  event.preventDefault();
-  api.getGameById(data)
-    .done(ui.getGameByIdSuccess)
-    .fail(ui.failure);
-};
+// const onGetGameById = function onGetGameById(event) {
+//   let data = getFormFields(this);
+//   console.log(data.id);
+//   event.preventDefault();
+//   api.getGameById(data)
+//     .done(ui.getGameByIdSuccess)
+//     .fail(ui.failure);
+// };
 
 // const onNewGame = function (event) {
 //   event.preventDefault();
@@ -81,7 +81,7 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn); //grab element from the dom with element
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);    //id on sign-up. Then does something
-  $('#game-id').on('submit', onGetGameById);
+  // $('#game-id').on('submit', onGetGameById);
   // $('.new-game').on('click', onNewGame);
   // $('#join-id').on('click', onJoinGame);
   // $('#history-games').on('click', onHistoryGames);

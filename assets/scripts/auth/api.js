@@ -6,7 +6,7 @@ const app = require('../app');
 //ajax requesting server a new user
 const signUp = (data) => {
 return $.ajax({
-    url: app.host + 'sign-up',
+    url: app.host + '/sign-up',
     method: 'POST',
     data,
   });
@@ -15,7 +15,7 @@ return $.ajax({
 //ajax request for user to sign in
 const signIn = (data) => {
 return $.ajax({
-    url: app.host + 'sign-in',
+    url: app.host + '/sign-in',
     method: 'POST',
     data,
   });
@@ -24,7 +24,7 @@ return $.ajax({
 //ajax request to change a user's password
 const changePassword = (data) => {
   return $.ajax({
-    url: app.host + 'change-password/' + app.user.id,
+    url: app.host + '/change-password/' + app.user.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -36,7 +36,7 @@ const changePassword = (data) => {
 //ajax request to sign a user out, deletes their token
 const signOut = () => {
   return $.ajax({
-    url: app.host + 'sign-out/' + app.user.id,
+    url: app.host + '/sign-out/' + app.user.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token,

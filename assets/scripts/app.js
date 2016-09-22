@@ -3,7 +3,7 @@
 
 //declare variable app with key api that has a value of our server location
 const app = {
-  host: 'https://aqueous-atoll-85096.herokuapp.com/',
+  host: 'https://aqueous-atoll-85096.herokuapp.com',
   // user: {
     //id: ?
     //email: ?

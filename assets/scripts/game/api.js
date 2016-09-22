@@ -17,7 +17,7 @@
 
 const getGameById = function (data){
   return $.ajax({
-    url: app.host + 'games/' + data.getGameById,
+    url: app.host + '/games/' + data.getGameById,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -25,16 +25,18 @@ const getGameById = function (data){
   });
 };
 
-// const newGame = () => {
-//   return $.ajax({
-//     url: app.host+ '/games',
-//     method: 'POST',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     }});
-// };
-//
-//
+const newGame = (data) => {
+  return $.ajax({
+    url: app.host+ '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data,
+  });
+};
+
+
 // const updateGame = function(index, value, over1) {
 //   $.ajax({
 //     url: app.host + '/games/' + app.game.id,
@@ -65,7 +67,7 @@ const getGameById = function (data){
 
 
 module.exports = {
-  // newGame,
+  newGame,
   getGameById,
   // historyGames,
   // joinGame,
