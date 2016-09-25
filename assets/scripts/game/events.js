@@ -7,11 +7,12 @@ const ui = require('./ui');
 
 const onNewGame = function (event) {
   event.preventDefault();
+	let data = getFormFields(event.target);
 	// console.log();
 	// $('.marker').text('');
 	// $('.marker').data('val', '0');
 	// boardArray[0] === ('');
-  api.newGame()
+  api.newGame(data)
   .done(ui.newGameSuccess)
   .fail(ui.failure);
 };
@@ -45,16 +46,27 @@ const blockPlay = function(){
 	$('.tile').off('click');
 };
 
-// const resetBoard = function (){
-//   $('.tile').empty();
-//   currentPlayer = '';
-//   boardArray = ['','','','','','','','','',];
-//   turnTracker = 0;
-//   over1 = false;
-//   winner = null;
+// const resumePlay = function(){
+//   $('.tile').on('tile', onClickTile);
+// };
+
+// const newGame = function() {
+//   $('#new-game').show();
+// 	// console.log();
+// };
+
+const resetBoard = function (){
+  $('.tile').empty();
+  marker = '';
+  boardArray = ['','','','','','','','','',];
+  turnTracker = 0;
+  over1 = false;
+  winner = null;
+	// resumePlay();
+	// onNewGame();
   // removeBoard();
   // resumePlay();
-// };
+};
 
 // Win Conditions
 let checkForWin = function () {
@@ -136,26 +148,15 @@ if ($(this).html() === '') {
 	}
 };
 
-// const displayWinner = function () {
-//   if (marker === null) {
-//     $('.messagetie').html("It's a tie!");
-//   } else if (marker){
-//   $('.messagewin').html('' + marker + ' has won the game.');
-//   }
-// };
-
-// const clearBoard = function(){
-// 	if checkForWin = true
-//
-// }
 
 const addHandlers = () => {
   $('.tile').on('click', onClickTile);
-	$('#newGame').on('submit', onNewGame);
+	$('#new-game').on('submit', onNewGame);
 	// $('#historyGames').on('submit', onHistoryGames);
 	$('#getGameById').on('submit', onGetGameById);
 	// $('#joinGame').on('submit', onJoinGame);
   // $('#updateGame').on('submit', onUpdateGame);
+	$('.reset-board').on('click', resetBoard);
 };
 
 
@@ -170,5 +171,4 @@ module.exports = {
   addHandlers,
 	// displayWinner,
   // updateGame,
-  // myModal,
 };
