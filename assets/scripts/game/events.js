@@ -5,17 +5,8 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
-const onNewGame = function (event) {
-  event.preventDefault();
-	let data = getFormFields(event.target);
-	// console.log();
-	// $('.marker').text('');
-	// $('.marker').data('val', '0');
-	// boardArray[0] === ('');
-  api.newGame(data)
-  .done(ui.newGameSuccess)
-  .fail(ui.failure);
-};
+
+
 
 const onGetGameById = function (event) {
 	event.preventDefault();
@@ -25,6 +16,7 @@ const onGetGameById = function (event) {
 		.done(ui.success)
 	  .fail(ui.failure);
 };
+
 
 
 let turnTracker = 0;
@@ -55,7 +47,7 @@ const blockPlay = function(){
 // 	// console.log();
 // };
 
-const resetBoard = function (){
+const newGameButton = function (){
   $('.tile').empty();
   marker = '';
   boardArray = ['','','','','','','','','',];
@@ -68,9 +60,28 @@ const resetBoard = function (){
   // resumePlay();
 };
 
+const onNewGame = function (event) {
+  event.preventDefault();
+	// let data = getFormFields(event.target);
+	// console.log();
+	// $('.marker').text('');
+	// $('.marker').data('val', '0');
+	// boardArray[0] === ('');
+	let data = {};
+  api.newGame(data)
+	  .done(ui.newGameSuccess)
+	  .fail(ui.failure);
+	// resetBoard();
+	newGameButton();
+};
+
+
+
+
+
+
 // Win Conditions
 let checkForWin = function () {
-	let win = false;
 	// console.log(boardArray);
 	if(marker === boardArray[0] && marker === boardArray[1] && marker === boardArray[2] || //horizonts
 		marker === boardArray[3] && marker === boardArray[4] && marker === boardArray[5] ||
@@ -81,8 +92,8 @@ let checkForWin = function () {
 		marker === boardArray[0] && marker === boardArray[4] && marker === boardArray[8] ||//diagonal
 		marker === boardArray[2] && marker === boardArray[4] && marker === boardArray[6] )
     {
-			win = true;
 			winner = marker;
+			over1 = true;
 			console.log("winner is " + marker);
       // $('.overlay').show (console.log("winner is " + marker));
       // $('.overlay').show("winner is " + marker);
@@ -91,9 +102,9 @@ let checkForWin = function () {
 			showMessage('The Winner is ' + winner );
 			blockPlay();
 		}
-  if (over1 === true) {
-		// blockPlay();
-		}
+  // if (over1 === true) {
+	// 	// blockPlay();
+	// 	}
 			// blockPlay();
   };
 
@@ -118,34 +129,41 @@ let checkForDraw = function(){
 };
 
 const onClickTile = function(event) {
-event.preventDefault();
-let tile = $(event.target);
-let id = tile.data('id');
-if ($(this).html() === '') {
-  if (turnTracker % 2 === 0) {
-    marker = "X";
-    $(this).html('X');
-    boardArray[id] = 'X';
-    turnTracker++; //will become odd
-    checkForWin ();
-    checkForDraw ();
-  }
-  else {
-    marker = "O";
-    $(this).html ('O');
-    boardArray[id] = 'O';
-    turnTracker++;
-		checkForWin ();
-    checkForDraw ();
-    // updateGame.boardArray();
-    // $('.overlay').show();
-    // // $('.overlay').hide();
-  }
-  // console.log(boardArray);
-}
-	else {
-	  showMessage('Not empty!'); //in the future add a message;
-	}
+	event.preventDefault();
+	// let tile = $(this).attr('data-id');
+	let tile = $(event.target);
+	let id = tile.data('id');
+
+	if ($(this).html() === '') {
+	  if (turnTracker % 2 === 0) {
+	    marker = "X";
+	    $(this).html('X');
+	    boardArray[id] = 'X';
+	    turnTracker++; //will become odd
+			api.updateGame(id, marker, over1);
+	    checkForWin ();
+	    checkForDraw ();
+	  	}
+	  else {
+	    marker = "O";
+	    $(this).html ('O');
+	    boardArray[id] = 'O';
+	    turnTracker++;
+			// api.updateGame(index, $(this).text(), over1);
+			api.updateGame(id, marker, over1);
+			checkForWin ();
+	    checkForDraw ();
+	    // updateGame.boardArray();
+	    // $('.overlay').show();
+	    // // $('.overlay').hide();
+	  	}
+	  // console.log(boardArray);
+		// index = $(this).data('index');
+		// 	boardArray[index] = $(this).text();
+		}
+		else {
+		  showMessage('Not empty!');
+		}
 };
 
 
@@ -156,7 +174,7 @@ const addHandlers = () => {
 	$('#getGameById').on('submit', onGetGameById);
 	// $('#joinGame').on('submit', onJoinGame);
   // $('#updateGame').on('submit', onUpdateGame);
-	$('.reset-board').on('click', resetBoard);
+	$('.new-game').on('click', newGameButton);
 };
 
 
@@ -169,6 +187,7 @@ module.exports = {
   currentPlayer,
   boardArray,
   addHandlers,
+	onNewGame,
 	// displayWinner,
   // updateGame,
 };

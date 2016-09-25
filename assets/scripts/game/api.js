@@ -36,6 +36,24 @@ const newGame = (data) => {
   });
 };
 
+const updateGame = (index, value, over1) => {
+  return $.ajax({
+    url: app.host + '/games/' + app.user.token,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: {
+      'game': {
+        'cell': {
+          'index': index,
+          'value': value,
+        },
+        'over': over1,
+      }
+    }
+  });
+};
 
 // const updateGame = function(index, value, over1) {
 //   $.ajax({
@@ -71,5 +89,5 @@ module.exports = {
   getGameById,
   // historyGames,
   // joinGame,
-  // updateGame,
+  updateGame,
 };
