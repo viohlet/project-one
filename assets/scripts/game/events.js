@@ -7,7 +7,6 @@ const ui = require('./ui');
 
 
 
-
 const onGetGameById = function (event) {
 	event.preventDefault();
 	let data = getFormFields(event.target);
@@ -34,47 +33,53 @@ const showMessage = function (msg) {
 	$('#message').fadeIn('fast').delay(4000).fadeOut('fast');
 };
 
+// const showImage = function (img) {
+//   document.getElementById("image").innerHTML = img;
+// 	$('#image').fadeIn('fast').delay(4000).fadeOut('fast');
+// };
+
+// $('body').click(function(event) {
+//     if (!$(event.target).closest('#image').length) {
+//         $('#image').hide();
+//     }
+// });
+
 const blockPlay = function(){
 	$('.tile').off('click');
 };
 
-// const resumePlay = function(){
-//   $('.tile').on('tile', onClickTile);
-// };
+const resumePlay = function(){
+  $('.tile').on('click', onClickTile);
+};
 
 // const newGame = function() {
 //   $('#new-game').show();
 // 	// console.log();
 // };
 
-const newGameButton = function (){
+const clearBoard = function (){
   $('.tile').empty();
   marker = '';
   boardArray = ['','','','','','','','','',];
   turnTracker = 0;
   over1 = false;
-  winner = null;
-	// resumePlay();
-	// onNewGame();
-  // removeBoard();
-  // resumePlay();
+	resumePlay();
 };
 
 const onNewGame = function (event) {
   event.preventDefault();
-	// let data = getFormFields(event.target);
+	let data = getFormFields(event.target);
 	// console.log();
 	// $('.marker').text('');
 	// $('.marker').data('val', '0');
 	// boardArray[0] === ('');
-	let data = {};
+	// let data = {};
   api.newGame(data)
 	  .done(ui.newGameSuccess)
 	  .fail(ui.failure);
 	// resetBoard();
-	newGameButton();
+	clearBoard();
 };
-
 
 
 
@@ -100,6 +105,7 @@ let checkForWin = function () {
 			// console.log("over is" + " "+ over);
 			// console.log("winner is " +marker);
 			showMessage('The Winner is ' + winner );
+			// showImage();
 			blockPlay();
 		}
   // if (over1 === true) {
@@ -117,7 +123,7 @@ let checkForDraw = function(){
 		// blockPlay();
 		// console.log("tie is" + " " + over1);
 		showMessage('It is a tie!');
-		// blockPlay();
+		blockPlay();
 	}
   else {
 		draw = false;
@@ -133,6 +139,7 @@ const onClickTile = function(event) {
 	// let tile = $(this).attr('data-id');
 	let tile = $(event.target);
 	let id = tile.data('id');
+	// let index = $(this).data('index');
 
 	if ($(this).html() === '') {
 	  if (turnTracker % 2 === 0) {
@@ -143,6 +150,7 @@ const onClickTile = function(event) {
 			api.updateGame(id, marker, over1);
 	    checkForWin ();
 	    checkForDraw ();
+			console.log(this);
 	  	}
 	  else {
 	    marker = "O";
@@ -153,6 +161,7 @@ const onClickTile = function(event) {
 			api.updateGame(id, marker, over1);
 			checkForWin ();
 	    checkForDraw ();
+			console.log(this);
 	    // updateGame.boardArray();
 	    // $('.overlay').show();
 	    // // $('.overlay').hide();
@@ -160,12 +169,21 @@ const onClickTile = function(event) {
 	  // console.log(boardArray);
 		// index = $(this).data('index');
 		// 	boardArray[index] = $(this).text();
+		// api.updateGame(id, marker, over1);
 		}
 		else {
-		  showMessage('Not empty!');
+		  // showMessage('Not empty!');
 		}
 };
 
+// const updateGame = function (event) {
+//   event.preventDefault();
+//   let index = event.target.id;
+//   let value = $(this).text();
+//   api.updateGame(index, value, over1)
+//   .done(ui.success)
+//   .fail(ui.failure);
+// };
 
 const addHandlers = () => {
   $('.tile').on('click', onClickTile);
@@ -174,7 +192,8 @@ const addHandlers = () => {
 	$('#getGameById').on('submit', onGetGameById);
 	// $('#joinGame').on('submit', onJoinGame);
   // $('#updateGame').on('submit', onUpdateGame);
-	$('.new-game').on('click', newGameButton);
+	$('.new-game').on('click', clearBoard);
+	// $('.tile').on('click', updateGame);
 };
 
 

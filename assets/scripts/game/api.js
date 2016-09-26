@@ -25,20 +25,20 @@ const getGameById = function (data){
   });
 };
 
-const newGame = (data) => {
+const newGame = () => {
   return $.ajax({
     url: app.host+ '/games',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data,
+    // data,
   });
 };
 
 const updateGame = (index, value, over1) => {
   return $.ajax({
-    url: app.host + '/games/' + app.user.token,
+    url: app.host + '/games/' + app.game.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token,

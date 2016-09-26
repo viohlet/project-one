@@ -8,9 +8,21 @@ $unit: 20px;
 $width: (4 * $unit);
 $height: (4 * $unit);
 
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  position: relative;
+}
+
+
 h1 {
   color: #E8860C;
   font-size: 35px;
+  text-align: center;
+  // position: static;
 }
 
 body {
@@ -23,12 +35,15 @@ body {
   text-align: center;
 }
 
+// .overlay {
+//   background-size: 40%;
+// }
 
 .row > .col-xs-4 {
   border: 1px solid #FFB828;
   box-sizing: border-box;
   // height: $height;
-  font-size: 65px;
+  font-size: 55px;
   height: $height;
   // padding: 60px;
   // width: $width;
@@ -45,17 +60,17 @@ body {
   color: #FFB828;
  }
 
-.message {
+#message {
   // background-color: #00f;
   font-size: 20px;
   color: #c3520c;
-  display: none;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
+  // display: none;
+  // height: 100%;
+  // left: 0;
+  // position: fixed;
+  // top: 0;
+  // width: 100%;
+  // z-index: 100;
   text-align: center;
 }
 

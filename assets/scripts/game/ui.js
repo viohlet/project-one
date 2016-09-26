@@ -12,7 +12,7 @@ const failure = (error) => {
 
 const newGameSuccess = (data) => {
   app.game = data.game;
-  console.log(app.game);
+  console.log(data);
 };
 
 // const joinGameSuccess = (data) => { ///add?
@@ -20,10 +20,10 @@ const newGameSuccess = (data) => {
 //   console.log(app.game);
 // };
 
-const updateGameSuccess = (data) => {
-  app.game = data.game;
-  console.log(app.game);
-};
+// const updateGameSuccess = (data) => {
+//   app.game = data.game;
+//   console.log(app.game);
+// };
 
 const getGameByIdSuccess = (data) => {
   app.game = data.game;
@@ -41,7 +41,7 @@ module.exports = {
   success,
   failure,
   newGameSuccess,
-  updateGameSuccess,
+  // updateGameSuccess,
   getGameByIdSuccess,
   // historyGamesSuccess,
   // joinGameSuccess,
