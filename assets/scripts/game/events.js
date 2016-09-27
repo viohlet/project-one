@@ -7,15 +7,21 @@ const ui = require('./ui');
 
 
 
-const onGetGameById = function (event) {
-	event.preventDefault();
-	let data = getFormFields(event.target);
-	console.log(data);
-	api.getGameById(data)
-		.done(ui.success)
-	  .fail(ui.failure);
-};
+// const onGetGameById = function (event) {
+// 	event.preventDefault();
+// 	let data = getFormFields(event.target);
+// 	console.log(data);
+// 	api.getGameById(data)
+// 		.done(ui.success)
+// 	  .fail(ui.failure);
+// };
 
+const onIndexGames = function (event) {
+  event.preventDefault();
+  api.indexGames()
+    .done(ui.onIndexGamesSuccess)
+    .fail(ui.failure);
+};
 
 
 let turnTracker = 0;
@@ -189,7 +195,8 @@ const addHandlers = () => {
   $('.tile').on('click', onClickTile);
 	$('#new-game').on('submit', onNewGame);
 	// $('#historyGames').on('submit', onHistoryGames);
-	$('#getGameById').on('submit', onGetGameById);
+	// $('#getGameById').on('submit', onGetGameById);
+	$('#index-games').on('submit', onIndexGames);
 	// $('#joinGame').on('submit', onJoinGame);
   // $('#updateGame').on('submit', onUpdateGame);
 	$('.new-game').on('click', clearBoard);
