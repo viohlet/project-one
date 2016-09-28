@@ -4,62 +4,24 @@
 
   <head>
     <title>Tic Tac Toe</title>
-    <!-- //DEPLOY YOUR APLICATION WUT 0000000000000000000000000000000000000-->
-    <!-- EASIEST AJAX IS TO HISTORY -->
-
-    <!-- <link rel="Stylesheet" href="index.scss" type="text/css" />
-    <!- <script src="http://tic-tac-toe.wdibos.com/"></script> -->
+    <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+Double+Pica" rel="stylesheet">
     <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
     <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
   </head>
 
   <body class="container-fluid">
 
-<!-- WELCOME DIV -->
 
-
-    <div class="welcome">
-
-      <h1>Tic-Tac-Toe</h1>
-
-      <!-- <form id="sign-in">
-        <fieldset>
-          <legend class="hibtnstyle">Log-in</legend>
-          <input type="email" name="credentials[email]" placeholder="Enter your email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="submit" name="submit" value="Next">
-        </fieldset>
-      </form> -->
-<!--
-      <form id="sign-up" action="process.php" method="POST">
-        <fieldset>
-          <legend class="hibtnstyle">Register</legend>
-            <div class="fillbox"> -->
-            <!-- <label>Input</label> -->
-            <!-- <span>
-              <input type="email" name="credentials[email]" placeholder="Enter your email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="password" name="credential[password_confirmation]" placeholder="Confirm your password">
-              <input type="submit" name="submit" value="Next">
-            </span>
-        </fieldset>
-      </form> -->
-
-    <!-- <form id="change-password" action="process.php" method="POST">
-      <fieldset>
-        <legend class="hibtnstyle">Change Password</legend>
-        <input type="text" name="credentials[email]" placeholder="Enter your email">
-        <input type="password" name="password[old]" placeholder="Old Password">
-        <input type="password" name="password[newn]" placeholder="New Password">
-        <input type="submit" name="submit" value="Next">
-      </fieldset>
-    </form>
-  </div> -->
+<!-- hiscreen DIV -->
+    <!-- <div class="welcome"> -->
+      <h1>Prince of Persia Tic-Tac-Toe</h1>
 
   <!-- Log-in Modal -->
-          <br/>
+        <br/>
+        <div class = hiscreen>
           <div class= ingresa>
-          <button type="button" class="hibtnstyle" data-toggle="modal"
+          <button type="button" class="btnstyle" data-toggle="modal"
           data-target="#ingresa">Log-in</button>
           <div id="ingresa" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -67,7 +29,7 @@
               <!-- Modal content-->
                 <div class="ingresa-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="ingresa-title">Hi there,</h4>
+                    <h4 class="ingresa-title">Hi there, old friend. </h4>
                 </div>
                 <div class="ingresa-body">
                   <form id="sign-in" action="process.php" method="POST">
@@ -76,22 +38,26 @@
                       <input type="email" name="credentials[email]" placeholder="Your email">
                       <input type="password" name="credentials[password]" placeholder="Password">
                       <input type="submit" name="submit" value="Next">
+                      <!-- <button type="submit" class="btn btn-primary pull-right" name="submit">Sign Up</button> -->
                     <!-- </fieldset> -->
                   </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
+                <!-- <div class="ingresamodal-footer">
+                  <button type="button" id="sign-up-button" class="btn btn-default" data-toggle="modal" data-target="#register" data-dismiss="modal">Register</button>
+                </div> -->
               </div>
             </div>
           </div>
         </div>
 
-
+<!-- signo stop -->
       <!-- Sign-up Modal -->
         </br>
         <div class= register>
-        <button type="button" class="hibtnstyle" data-toggle="modal"
+        <button type="button" class="btnstyle" data-toggle="modal"
         data-target="#register">Register</button>
           <!-- Modal -->
           <div id="register" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -99,8 +65,8 @@
              <div class="modal-content">
               <!-- Modal content-->
                 <div class="register-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="register-title">Hi there,</h4>
+                  <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                    <h4 class="register-title">Welcome, tell me who you are and the secret password. </h4>
                 </div>
                 <div class="register-body">
                   <form id="sign-up" action="process.php" method="POST">
@@ -120,138 +86,99 @@
             </div>
           </div>
         </div>
+      </div>
+    <br/>
+    <!-- End of hiscreen DIV -->
 
-        <!-- Change Password Modal -->
-        <br/>
-        <div class= cambiopass>
-        <button type="button" class="hibtnstyle" data-toggle="modal"
-        data-target="#cambiopass">Change Password</button>
-          <!-- Modal -->
-          <div id="cambiopass" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-             <div class="modal-content">
-              <!-- Modal content-->
-                <div class="cambiopass-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="cambiopass-title">Hi there,</h4>
-                </div>
-                <div class="cambiopass-body">
-                  <form id="change-password" action="process.php" method="POST">
-                    <!-- <fieldset> -->
-                      <!-- <legend>Changeyour Password</legend> -->
-                      <input type="email" name="credentials[email]" placeholder="Your email">
-                      <input type="password" name="password[old]" placeholder="Old Password">
-                      <input type="password" name="password[new]" placeholder="New Password">
-                      <input type="submit" name="submit" value="Next">
-                    <!-- </fieldset> -->
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+    <div id="message"></div>
+
+    <!-- Board DIV-->
+    <div class="board">
+     <div class="row">
+       <div class= "col-xs-4 tile" data-id="0"></div>
+       <div class = "col-xs-4 tile" data-id="1"></div>
+       <div class = "col-xs-4 tile" data-id="2"></div>
+     </div>
+     <div class="row">
+       <div class = "col-xs-4 tile" data-id="3"></div>
+       <div class = "col-xs-4 tile" data-id="4"></div>
+       <div class = "col-xs-4 tile" data-id="5"></div>
+     </div>
+     <div class="row">
+       <div class = "col-xs-4 tile" data-id="6"></div>
+       <div class = "col-xs-4 tile" data-id="7"></div>
+       <div class = "col-xs-4 tile" data-id="8"></div>
+     </div>
+   </div>
+   <!-- End of Board DIV -->
+
+
+   <!-- byescreen DIV -->
+
+    <div class= "byescreen">
+      <br/>
+      <br/>
+      <form id= "new-game">
+        <button type="submit" name="submit" class="btnstyle" aria-pressed="false">New Game</button>
+      </form>
+
+
+      </br>
+      <form id="index-games">
+          <button type="submit" name="submit" class="btnstyle">View Total Games</button>
+      </form>
+
+      <!-- Change Password Modal -->
+      <br/>
+      <div class= cambiopass>
+      <button type="button" class="btnstyle" data-toggle="modal"
+      data-target="#cambiopass">Change Password</button>
+        <!-- Modal -->
+        <div id="cambiopass" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+           <div class="modal-content">
+            <!-- Modal content-->
+              <div class="cambiopass-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="cambiopass-title">Change who you are... my shadow, perhaps?</h4>
+              </div>
+              <div class="cambiopass-body">
+                <form id="change-password">
+                    <!-- <legend>Changeyour Password</legend> -->
+                    <!-- <input type="email" name="credentials[email]" placeholder="Your email"> -->
+                    <input type="password" name="passwords[old]" placeholder="Old Password">
+                    <input type="password" name="passwords[new]" placeholder="New Password">
+                    <input type="submit" name="submit" value="Next">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+    <!-- </div> -->
 
-    <br/>
-    <br/>
-    <h1> </h1>
-
-<!-- <input value=" " class="0" type="button" style="font-size:18pt;height:150px;width:150px" onClick='tic(this) /'> -->
-
-
-      <!-- <form name="board">
-        <div class= 'row1'>
-            <input value=" " data-id="0" name=b00 class="tile" type="button" style="font-size:18pt;height:160px;width:160px">
-            <input value=" " data-id="1" name=b01 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
-            <input value=" " data-id="2" name=b02 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
-        </div>
-        <div class= 'row2'>
-            <input value=" " data-id="3" name=b10 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
-            <input value=" " data-id="4" name=b11 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
-            <input value=" " data-id="5" name=b12 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
-        </div>
-        <div class= 'row3'>
-            <input value=" " data-id="6" name=b20 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
-            <input value=" " data-id="7" name=b21 class="tile" type="button" style="font-size:18pt;height:160px;wclassth:160px">
-            <input value=" " data-id="8" name=b22 class="tile" type="button" style="font-size:18pt;height:160px;width:160px">
-      </form>
-    </div> -->
-
-    <!-- Board -->
-    <div class="board">
-     <div class="row">
-       <div class= "col-xs-4 tile" data-id=0></div>
-       <div class = "col-xs-4 tile" data-id=1></div>
-       <div class = "col-xs-4 tile" data-id=2></div>
-     </div>
-     <div class="row">
-       <div class = "col-xs-4 tile" data-id=3></div>
-       <div class = "col-xs-4 tile" data-id=4></div>
-       <div class = "col-xs-4 tile" data-id=5></div>
-     </div>
-     <div class="row">
-       <div class = "col-xs-4 tile" data-id=6></div>
-       <div class = "col-xs-4 tile" data-id=7></div>
-       <div class = "col-xs-4 tile" data-id=8></div>
-     </div>
-   </div>
-
-<!-- <div class="message">  </div> -->
-
-   <!-- <div class="messagetie">  blah </div>
-   <div class="messagewin">  blah  </div> -->
-
-<!-- PLAYER A DIV -->
-    <!-- <div class="playerA">
-      <h2>Player X (you)</h2>
-    </div> -->
-
-<!-- PLAYER B DIV -->
-    <!-- <div class="playerB">
-      <h2>Player O</h2>
-    </div> -->
-
-<!-- byeScreen DIV -->
-
-    <div class= "byeScreen">
-      <br/>
-      <br/>
-      <form id= "newGame">
-        <button type="button" name="newGame" class="btnstyle" aria-pressed="false">New Game</button>
-      </form>
-
-      <!-- <br/>
-      <form id= "historyGames">
-        <button type="submit" name="submit" class="btnstyle">Saved History</button>
-      </form> -->
 
       <br/>
       <form id="sign-out">
         <fieldset>
           <button type="submit" name="submit" class="btnstyle">Log out</button>
-          <!-- <input type="email" name="credentials[email]" placeholder="Enter your email">
-          <input type="password" name="credentials[password]" placeholder="Password"> -->
-          <!-- <input type="submit" name="submit" value="Next"> -->
         </fieldset>
       </form>
-<!--
-      <br/>
-      <form id= "joinGame">
-        <button type="submit" name="submit" class="btnstyle">Challenge Someone</button>
-      <input type="text" name="join[id]" id="join-id" placeholder="Something here">
-      </form> -->
+      </br>
+      </br>
 
-      <br/>
+      <!-- <br/>
       <form id= "getGameById">
         <input type="submit" value="Get Game by ID" class="btnstyle">
         <input name=getGameById type="number" placeholder="Game ID">
       </form>
       <br/>
-      <br/>
+      <br/> -->
     </div>
+    <!-- end of byescreen -->
 
   </body>
 </html>

@@ -1,47 +1,72 @@
 'use strict';
 
-
 const app = require('../app');
-//put it in app because there isnt any real code
-// we do this to avoid circular dependency
-//this way we can share data from one file and share
-//among all the different files that depend on that data
 
-const signInSuccess = (data) => {
-  app.user = data.user; //can use app.user or app.token. we know this because the
-  console.log(app);
-  $('.app').css("display", "block"); //even though we did not define one. User contains the
-  $('.space').text('');
-  // hide sign up button
-  // hide sign in button
-  // show password button
-  $('h1').text('');   //console in browser told us that we have the key user
-                      //even though we did not define one. User contains the
-};                    //token that we care about
 
-const signOutSuccess = () =>{
-  delete app.user;
-  console.log(app);
-  $('.app').css("display", "none");
-};
-
-const changePasswordSuccess = (data) => {
-  app.user = data.user;
-  console.log(app);
+const showOtherButtons = function (){
+  // $('.cambiopass').css('display', 'block');
+  $('.byescreen').css('display', 'block');
 };
 
 const signUpSuccess = (data) => {
- app.user = data.user;
+  app.user = data.user;
+  document.getElementById("message").innerHTML = 'Registration complete. Please Log-In';
+  $('#message').fadeIn('fast').delay(5000).fadeOut('fast');
+  // console.log(data);
+  // showOtherButtons();
+};
+
+const signInSuccess = (data) => {
+  app.user = data.user;
+  document.getElementById("message").innerHTML = 'Log-in successful';
+  $('#message').fadeIn('fast').delay(3000).fadeOut('fast');
+  // console.log(app);
+  // $('.app').css("display", "block");
+  // $('.space').text('');
+  showOtherButtons();
+};
+
+
+const showLogInButtons = function (){
+  $('.hiscreen').css('display', 'block');
+  // $('.ingresa').css('display', 'block');
+  // $('.register').css('display', 'block');
+};
+
+const hideBoard2 = function (){
+  $('.board').css('display', 'none');
+};
+
+const hideOtherButtons = function (){
+  // $('.cambiopass').css('display', 'none');
+  $('.byescreen').css('display', 'none');
+};
+
+
+const signOutSuccess = () =>{
+  delete app.user;
+  // console.log(app);
+  $('.app').css("display", "none");
+  showLogInButtons();
+  hideBoard2();
+  hideOtherButtons();
+};
+
+const changePasswordSuccess = () => {
+  // app.user = data.user;
+  document.getElementById("message").innerHTML = 'Password successfully changed';
+  $('#message').fadeIn('fast').delay(3000).fadeOut('fast');
+  console.log(app);
 };
 
 const success = (data) => {
   if(data){
-  console.log(data);
+  // console.log(data);
   }
 };
 
-const failure = (error) => {
-  console.error(error);
+const failure = () => {
+  // console.error(error);
 };
 
 
@@ -52,4 +77,5 @@ module.exports = {
   signOutSuccess,
   changePasswordSuccess,
   signUpSuccess,
+  // showOtherButtons,
 };

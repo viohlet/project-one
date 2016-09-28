@@ -2,47 +2,46 @@
 
 const app = require('../app');
 
-const success = (data) => {
-  console.log(data);
+const success = () => {
+  // console.log(data);
 };
 
-const failure = (error) => {
-  console.log(error);
+const failure = () => {
+  // console.log(error);
+};
+
+const showBoard = function (){
+  $('.board').css('display', 'block');
+};
+
+const hideLogInsButton = function () {
+  $('.hiscreen').css('display', 'none');
+  // $('.ingresa').css('display', 'none');
+	// $('.register').css('display', 'none');
 };
 
 const newGameSuccess = (data) => {
   app.game = data.game;
-  console.log(app.game);
+  // console.log(data);
+  showBoard();
+  hideLogInsButton();
 };
 
-// const joinGameSuccess = (data) => { ///add?
-//   app.game = data.game;
-//   console.log(app.game);
-// };
-
-// const updateGameSuccess = (data) => { ////////////////////////
-//   app.game = data.game;
-//   console.log(app.game);
-// };
-
-const getGameByIdSuccess = (data) => {
-  app.game = data.game;
-  // $(".game-id-append").append('<h1>'+ data.game.player_x.email + '  was the player'+ '</h1>');  //oops?
-  console.log(data);
+const onIndexGamesSuccess = (data) => {
+  document.getElementById("message").innerHTML = 'Games played: '+ data.games.length;
+  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
 };
 
-// const historyGamesSuccess = (data) => { //add
+// const getGameByIdSuccess = (data) => {
 //   app.game = data.game;
-//   console.log(app);
+//   // $(".game-id-append").append('<h1>'+ data.game.player_x.email + '  was the player'+ '</h1>');  //oops?
+//   console.log(data);
 // };
-
 
 module.exports = {
   success,
   failure,
   newGameSuccess,
-  // updateGameSuccess,
-  getGameByIdSuccess,
-  // historyGamesSuccess,
-  // joinGameSuccess,
+  onIndexGamesSuccess,
+  // getGameByIdSuccess,
 };

@@ -4,54 +4,22 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 
 const api = require('./api');
 const ui = require('./ui');
-//
-// const onUpdateGame = function onUpdateGame(marker, index, over1){   /// what do i do with you?
+
+// const onGetGameById = function (event) {
 // 	event.preventDefault();
-// 	api.updateGame(marker, index, over1)
-//     .done(ui.updateGameSuccess)
-//     .fail(ui.failure);
-// };
-
-// const onHistoryGames = function (event) {
-//   event.preventDefault();
-//   api.historyGames()
-//     .done(ui.success)
-//     .fail(ui.failure);
-// };
-
-// const onJoinGame = function (event) {
-//   event.preventDefault();
-//   api.joinGame()
-//     .done(ui.joinGameSuccess)
-//     .fail(ui.failure);
-//   };
-
-// const onNewGame = function (boardArray) {
-//   event.preventDefault();
 // 	let data = getFormFields(event.target);
-// 	// let data = getFormFields(this);
 // 	console.log(data);
-//   api.newGame.boardArray(data)
-//     .done(ui.success)
-//     .fail(ui.failure);
+// 	api.getGameById(data)
+// 		.done(ui.success)
+// 	  .fail(ui.failure);
 // };
 
-// const onNewGame = function (event) {   //////////////////////
-//   event.preventDefault();
-//   api.newGame()
-//   .done(ui.newGameSuccess)
-//   .fail(ui.failure);
-// };
-
-const onGetGameById = function (event) {
-	event.preventDefault();
-	let data = getFormFields(event.target);
-	console.log(data);
-	api.getGameById(data)
-		.done(ui.success)
-	  .fail(ui.failure);
+const onIndexGames = function (event) {
+  event.preventDefault();
+  api.indexGames()
+    .done(ui.onIndexGamesSuccess)
+    .fail(ui.failure);
 };
-
 
 
 let turnTracker = 0;
@@ -60,10 +28,60 @@ let index;
 let over1 = false;
 let currentPlayer = ' ';
 let boardArray = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
+let winner;
+// let player = '';
+
+
+const showMessage = function (msg) {
+	document.getElementById("message").innerHTML = msg;
+	$('#message').fadeIn('fast').delay(4000).fadeOut('fast');
+};
+
+
+const blockPlay = function(){
+	$('.tile').off('click');
+};
+
+const hideBoard = function () {
+  $('.board').css('display', 'none');
+};
+
+const resumePlay = function(){
+  $('.tile').on('click', onClickTile);
+};
+
+
+const clearBoard = function (){
+  $('.tile').empty();
+  marker = '';
+  boardArray = ['','','','','','','','','',];
+  turnTracker = 0;
+  over1 = false;
+	resumePlay();
+	hideBoard();
+};
+
+// const hideLogInsButton = function () {
+//   $('.hiscreen').css('display', 'none');
+//   // $('.ingresa').css('display', 'none');
+// 	// $('.register').css('display', 'none');
+// };
+
+const onNewGame = function (event) {
+  event.preventDefault();
+	let data = getFormFields(event.target);
+	// console.log();
+  api.newGame(data)
+	  .done(ui.newGameSuccess)
+	  .fail(ui.failure);
+	clearBoard();
+	// hideLogInsButton();
+};
+
+
 
 // Win Conditions
 let checkForWin = function () {
-	let win = false;
 	// console.log(boardArray);
 	if(marker === boardArray[0] && marker === boardArray[1] && marker === boardArray[2] || //horizonts
 		marker === boardArray[3] && marker === boardArray[4] && marker === boardArray[5] ||
@@ -74,15 +92,13 @@ let checkForWin = function () {
 		marker === boardArray[0] && marker === boardArray[4] && marker === boardArray[8] ||//diagonal
 		marker === boardArray[2] && marker === boardArray[4] && marker === boardArray[6] )
     {
-			win = true;
-      // $('.user-message').text('X IS VICTORIOUS!');
-			console.log("winner is " + marker);
-      // $('.overlay').show (console.log("winner is " + marker));
-      // $('.overlay').show("winner is " + marker);
-			// console.log("over is" + " "+ over);
-			// console.log("winner is " +marker);
+			winner = marker;
+			over1 = true;
+			// console.log("winner is " + marker);
+
+			showMessage('The Winner is ' + winner );
+			blockPlay();
 		}
-      over1 = true;
   };
 
 //Draw conditions
@@ -90,9 +106,10 @@ let checkForDraw = function(){
 	let draw = false;
 	if(turnTracker === 9)
   {
-		draw = true;
 		over1 = true;
-		console.log("tie is" + " " + over1);
+		// console.log("tie is" + " " + over1);
+		showMessage('It is a tie!');
+		blockPlay();
 	}
   else {
 		draw = false;
@@ -103,53 +120,47 @@ let checkForDraw = function(){
 };
 
 const onClickTile = function(event) {
-event.preventDefault();
-let tile = $(event.target);
-let id = tile.data('id');
-if ($(this).html() === '') {
-  if (turnTracker % 2 === 0) {
-    marker = "X";
-    $(this).html('X');
-    boardArray[id] = 'X';
-    turnTracker++; //will become odd
-    checkForWin ();
-    checkForDraw ();
-  }
-  else {
-    marker = "O";
-    $(this).html ('O');
-    boardArray[id] = 'O';
-    turnTracker++;
-		checkForWin ();
-    checkForDraw ();
-    // updateGame.boardArray();
-    // $('.overlay').show();
-    // // $('.overlay').hide();
-  }
-  // console.log(boardArray);
-}
-	else {
-	  console.log('Not empty!'); //in the future add a message;
-	}
+	event.preventDefault();
+	// let tile = $(this).attr('data-id');
+	let tile = $(event.target);
+	let id = tile.data('id');
+	// let index = $(this).data('index');
 
+	if ($(this).html() === '') {
+	  if (turnTracker % 2 === 0) {
+	    marker = "X";
+	    $(this).html('X');
+	    boardArray[id] = 'X';
+	    turnTracker++; //will become odd
+			api.updateGame(id, marker, over1);
+	    checkForWin ();
+	    checkForDraw ();
+			// console.log(this);
+	  	}
+	  else {
+	    marker = "O";
+	    $(this).html ('O');
+	    boardArray[id] = 'O';
+	    turnTracker++;
+			// api.updateGame(index, $(this).text(), over1);
+			api.updateGame(id, marker, over1);
+			checkForWin ();
+	    checkForDraw ();
+			// console.log(this);
+	  	}
+		}
+		else {
+		  // showMessage('Not empty!');
+		}
 };
-
-// const displayWinner = function () {
-//   if (marker === null) {
-//     $('.messagetie').html("It's a tie!");
-//   } else if (marker){
-//   $('.messagewin').html('' + marker + ' has won the game.');
-//   }
-// };
 
 
 const addHandlers = () => {
   $('.tile').on('click', onClickTile);
-	// $('#newGame').on('submit', onNewGame);
-	// $('#historyGames').on('submit', onHistoryGames);
-	$('#getGameById').on('submit', onGetGameById);
-	// $('#joinGame').on('submit', onJoinGame);
-  // $('#updateGame').on('submit', onUpdateGame);
+	$('#new-game').on('submit', onNewGame);
+	// $('#getGameById').on('submit', onGetGameById);
+	$('#index-games').on('submit', onIndexGames);
+	$('.new-game').on('click', clearBoard);
 };
 
 
@@ -162,7 +173,5 @@ module.exports = {
   currentPlayer,
   boardArray,
   addHandlers,
-	// displayWinner,
-  // updateGame,
-  // myModal,
+	onNewGame,
 };
