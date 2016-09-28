@@ -11,7 +11,7 @@ const showOtherButtons = function (){
 const signUpSuccess = (data) => {
   app.user = data.user;
   document.getElementById("message").innerHTML = 'Registration complete';
-  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
+  $('#message').fadeIn('fast').delay(3000).fadeOut('fast');
   // console.log(data);
   showOtherButtons();
 };
@@ -19,7 +19,7 @@ const signUpSuccess = (data) => {
 const signInSuccess = (data) => {
   app.user = data.user;
   document.getElementById("message").innerHTML = 'Log-in successful';
-  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
+  $('#message').fadeIn('fast').delay(3000).fadeOut('fast');
   // console.log(app);
   // $('.app').css("display", "block");
   // $('.space').text('');
@@ -55,7 +55,7 @@ const signOutSuccess = () =>{
 const changePasswordSuccess = () => {
   // app.user = data.user;
   document.getElementById("message").innerHTML = 'Password successfully changed';
-  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
+  $('#message').fadeIn('fast').delay(3000).fadeOut('fast');
   console.log(app);
 };
 
