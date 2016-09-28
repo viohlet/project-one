@@ -8,6 +8,13 @@ const showOtherButtons = function (){
   $('.byescreen').css('display', 'block');
 };
 
+const hideLogInsButton = function () {
+  $('#loginbutton').css('display', 'none');
+  $('#signupbutton').css('display', 'none');
+  // $('.ingresa').css('display', 'none');
+	// $('.register').css('display', 'none');
+};
+
 const signUpSuccess = (data) => {
   app.user = data.user;
   document.getElementById("message").innerHTML = 'Registration complete. Please Log-In';
@@ -24,11 +31,13 @@ const signInSuccess = (data) => {
   // $('.app').css("display", "block");
   // $('.space').text('');
   showOtherButtons();
+  hideLogInsButton();
 };
 
 
 const showLogInButtons = function (){
-  $('.hiscreen').css('display', 'block');
+  $('#loginbutton').css('display', 'block');
+  $('#signupbutton').css('display', 'block');
   // $('.ingresa').css('display', 'block');
   // $('.register').css('display', 'block');
 };
