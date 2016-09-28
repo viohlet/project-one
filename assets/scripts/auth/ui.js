@@ -23,6 +23,10 @@ const hideBoard2 = function () {
   $('.board').css('display', 'none');
 };
 
+const hideOtherButtons = function (){
+  $('.cambiopass').css('display', 'none');
+  $('.byescreen').css('display', 'none');
+};
 // const hideLogInsButton = function () {
 //   $('.ingresa').css('display', 'none');
 // 	$('.register').css('display', 'none');
@@ -44,6 +48,7 @@ const signOutSuccess = () =>{
   $('.app').css("display", "none");
   showLogInButtons();
   hideBoard2();
+  hideOtherButtons();
 };
 
 const changePasswordSuccess = () => {
