@@ -10,10 +10,10 @@ const showOtherButtons = function (){
 
 const signUpSuccess = (data) => {
   app.user = data.user;
-  document.getElementById("message").innerHTML = 'Registration complete';
-  $('#message').fadeIn('fast').delay(3000).fadeOut('fast');
+  document.getElementById("message").innerHTML = 'Registration complete. Please Log-In';
+  $('#message').fadeIn('fast').delay(5000).fadeOut('fast');
   // console.log(data);
-  showOtherButtons();
+  // showOtherButtons();
 };
 
 const signInSuccess = (data) => {
