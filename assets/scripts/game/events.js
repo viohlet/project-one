@@ -37,16 +37,6 @@ const showMessage = function (msg) {
 	$('#message').fadeIn('fast').delay(4000).fadeOut('fast');
 };
 
-// const showImage = function (img) {
-//   document.getElementById("image").innerHTML = img;
-// 	$('#image').fadeIn('fast').delay(4000).fadeOut('fast');
-// };
-
-// $('body').click(function(event) {
-//     if (!$(event.target).closest('#image').length) {
-//         $('#image').hide();
-//     }
-// });
 
 const blockPlay = function(){
 	$('.tile').off('click');
@@ -60,10 +50,6 @@ const resumePlay = function(){
   $('.tile').on('click', onClickTile);
 };
 
-// const newGame = function() {
-//   $('#new-game').show();
-// 	// console.log();
-// };
 
 const clearBoard = function (){
   $('.tile').empty();
@@ -75,10 +61,11 @@ const clearBoard = function (){
 	hideBoard();
 };
 
-const hideLogInsButton = function () {
-  $('.ingresa').css('display', 'none');
-	$('.register').css('display', 'none');
-};
+// const hideLogInsButton = function () {
+//   $('.hiscreen').css('display', 'none');
+//   // $('.ingresa').css('display', 'none');
+// 	// $('.register').css('display', 'none');
+// };
 
 const onNewGame = function (event) {
   event.preventDefault();
@@ -88,10 +75,8 @@ const onNewGame = function (event) {
 	  .done(ui.newGameSuccess)
 	  .fail(ui.failure);
 	clearBoard();
-	hideLogInsButton();
+	// hideLogInsButton();
 };
-
-
 
 
 
@@ -109,19 +94,11 @@ let checkForWin = function () {
     {
 			winner = marker;
 			over1 = true;
-			console.log("winner is " + marker);
-      // $('.overlay').show (console.log("winner is " + marker));
-      // $('.overlay').show("winner is " + marker);
-			// console.log("over is" + " "+ over);
-			// console.log("winner is " +marker);
+			// console.log("winner is " + marker);
+
 			showMessage('The Winner is ' + winner );
-			// showImage();
 			blockPlay();
 		}
-  // if (over1 === true) {
-	// 	// blockPlay();
-	// 	}
-			// blockPlay();
   };
 
 //Draw conditions
@@ -130,7 +107,6 @@ let checkForDraw = function(){
 	if(turnTracker === 9)
   {
 		over1 = true;
-		// blockPlay();
 		// console.log("tie is" + " " + over1);
 		showMessage('It is a tie!');
 		blockPlay();
@@ -139,7 +115,6 @@ let checkForDraw = function(){
 		draw = false;
 	}
 	// console.log("over should be true");
-	//  blockPlay();
 	 return draw;
 
 };
@@ -160,7 +135,7 @@ const onClickTile = function(event) {
 			api.updateGame(id, marker, over1);
 	    checkForWin ();
 	    checkForDraw ();
-			console.log(this);
+			// console.log(this);
 	  	}
 	  else {
 	    marker = "O";
@@ -171,40 +146,21 @@ const onClickTile = function(event) {
 			api.updateGame(id, marker, over1);
 			checkForWin ();
 	    checkForDraw ();
-			console.log(this);
-	    // updateGame.boardArray();
-	    // $('.overlay').show();
-	    // // $('.overlay').hide();
+			// console.log(this);
 	  	}
-	  // console.log(boardArray);
-		// index = $(this).data('index');
-		// 	boardArray[index] = $(this).text();
-		// api.updateGame(id, marker, over1);
 		}
 		else {
 		  // showMessage('Not empty!');
 		}
 };
 
-// const updateGame = function (event) {
-//   event.preventDefault();
-//   let index = event.target.id;
-//   let value = $(this).text();
-//   api.updateGame(index, value, over1)
-//   .done(ui.success)
-//   .fail(ui.failure);
-// };
 
 const addHandlers = () => {
   $('.tile').on('click', onClickTile);
 	$('#new-game').on('submit', onNewGame);
-	// $('#historyGames').on('submit', onHistoryGames);
 	// $('#getGameById').on('submit', onGetGameById);
 	$('#index-games').on('submit', onIndexGames);
-	// $('#joinGame').on('submit', onJoinGame);
-  // $('#updateGame').on('submit', onUpdateGame);
 	$('.new-game').on('click', clearBoard);
-	// $('.tile').on('click', updateGame);
 };
 
 
@@ -218,6 +174,4 @@ module.exports = {
   boardArray,
   addHandlers,
 	onNewGame,
-	// displayWinner,
-  // updateGame,
 };

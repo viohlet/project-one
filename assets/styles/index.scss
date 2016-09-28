@@ -8,13 +8,12 @@ $unit: 20px;
 $width: (4 * $unit);
 $height: (4 * $unit);
 $fontmain: 'UnifrakturCook', cursive;
-$fontsec: 'Cinzel Decorative', cursive;
+$fontsec: 'IM Fell Double Pica', serif;
 
 html,
 body {
   min-height: 100%;
 }
-
 
 h1 {
   color: #E8860C;
@@ -25,11 +24,12 @@ h1 {
   font-family: $fontmain;
 }
 
-.ingresa-title {
+.ingresa-title,
+.register-title,
+.cambiopass-title {
   // font-family: $fontsec;
   font-size: 25px;
 }
-
 
 body {
   background-image: url('prince1.jpg');
@@ -43,24 +43,18 @@ body {
   font-family: $fontsec;
 }
 
-// .overlay {
-//   background-size: 40%;
-// }
 
 .row > .col-xs-4 {
   border: 1px solid #FFB828;
   box-sizing: border-box;
-  // height: $height;
   font-size: 55px;
   height: $height;
   // padding: 60px;
-  // width: $width;
   width: $width;
   // margin: 0 auto;
   line-height: $height;
   text-align: center;
 }
-
 
 .board {
   display: none;
@@ -69,32 +63,22 @@ body {
   color: #FFB828;
  }
 
-.cambiopass,
+.hiscreen {
+  text-align: center;
+  // display: block;
+ }
+
 .byescreen {
+  text-align: center;
   display: none;
 }
 
 
-
 #message {
-  // background-color: #00f;
   font-size: 20px;
   color: #c3520c;
-  // display: none;
-  // height: 100%;
-  // left: 0;
-  // position: fixed;
-  // top: 0;
-  // width: 100%;
-  // z-index: 100;
   text-align: center;
 }
-
-.ingresa,
-.register {
-  text-align: center;
-}
-
 
 .btnstyle {
   background-color: #b2cdf3;
@@ -103,7 +87,7 @@ body {
   border-right: 2px solid #4f6267;
   border-top: 2px solid #a3ceda;
   color: #2d525d;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
   padding: 5px 15px;
 }

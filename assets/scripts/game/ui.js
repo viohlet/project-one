@@ -2,46 +2,35 @@
 
 const app = require('../app');
 
-const success = (data) => {
-  console.log(data);
+const success = () => {
+  // console.log(data);
 };
 
-const failure = (error) => {
-  console.log(error);
+const failure = () => {
+  // console.log(error);
 };
 
 const showBoard = function (){
   $('.board').css('display', 'block');
 };
 
-
-// const showLogInButtons = function (){
-//   $('.ingresa').css('display', 'block');
-//   $('.register').css('display', 'block');
-// };
+const hideLogInsButton = function () {
+  $('.hiscreen').css('display', 'none');
+  // $('.ingresa').css('display', 'none');
+	// $('.register').css('display', 'none');
+};
 
 const newGameSuccess = (data) => {
   app.game = data.game;
-  console.log(data);
+  // console.log(data);
   showBoard();
-  // showLogInButtons();
+  hideLogInsButton();
 };
-
 
 const onIndexGamesSuccess = (data) => {
   document.getElementById("message").innerHTML = 'Games played: '+ data.games.length;
   $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
 };
-
-// const joinGameSuccess = (data) => { ///add?
-//   app.game = data.game;
-//   console.log(app.game);
-// };
-
-// const updateGameSuccess = (data) => {
-//   app.game = data.game;
-//   console.log(app.game);
-// };
 
 // const getGameByIdSuccess = (data) => {
 //   app.game = data.game;
@@ -49,20 +38,10 @@ const onIndexGamesSuccess = (data) => {
 //   console.log(data);
 // };
 
-// const historyGamesSuccess = (data) => { //add
-//   app.game = data.game;
-//   console.log(app);
-// };
-
-
 module.exports = {
   success,
   failure,
   newGameSuccess,
   onIndexGamesSuccess,
-  // newGameFailure,
-  // updateGameSuccess,
   // getGameByIdSuccess,
-  // historyGamesSuccess,
-  // joinGameSuccess,
 };
