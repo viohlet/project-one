@@ -13,10 +13,6 @@ body {
   min-height: 100%;
 }
 
-body {
-  position: relative;
-}
-
 
 h1 {
   color: #E8860C;
@@ -33,6 +29,7 @@ body {
   background-size: 130%;
   // color: $font-color;
   text-align: center;
+  position: relative;
 }
 
 // .overlay {
@@ -55,10 +52,18 @@ body {
 
 
 .board {
-  margin: 0 40%;
+  display: none;
+  margin: 0 41%;
   text-align: center;
   color: #FFB828;
  }
+
+.cambiopass,
+.byescreen {
+  display: none;
+}
+
+
 
 #message {
   // background-color: #00f;
@@ -74,26 +79,32 @@ body {
   text-align: center;
 }
 
-.btnstyle {
-  border-top: 2px solid #a3ceda;
-  border-left: 2px solid #a3ceda;
-  border-right: 2px solid #4f6267;
-  border-bottom: 2px solid #4f6267;
-  padding: 5px 15px !important;
-  font-size: 12px !important;
-  background-color: #b2cdf3;
-  font-weight: bold;
-  color: #2d525d;
-  }
+.ingresa,
+.register {
+  text-align: center;
+}
 
-.hibtnstyle {
-  border-top: 2px solid #a3ceda;
+
+.btnstyle {
+  background-color: #b2cdf3;
+  border-bottom: 2px solid #4f6267;
   border-left: 2px solid #a3ceda;
   border-right: 2px solid #4f6267;
-  border-bottom: 2px solid #4f6267;
-  padding: 5px 15px !important;
-  font-size: 12px !important;
-  background-color: #6f8eb3;
-  font-weight: bold;
+  border-top: 2px solid #a3ceda;
   color: #2d525d;
-  }
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 15px;
+}
+
+// .hibtnstyle {
+//   background-color: #6f8eb3;
+//   border-bottom: 2px solid #4f6267;
+//   border-left: 2px solid #a3ceda;
+//   border-right: 2px solid #4f6267;
+//   border-top: 2px solid #a3ceda;
+//   color: #2d525d;
+//   font-size: 12px;
+//   font-weight: bold;
+//   padding: 5px 15px;
+// }

@@ -13,12 +13,12 @@
 
 <!-- WELCOME DIV -->
     <!-- <div class="welcome"> -->
-      <h1>Tic-Tac-Toe</h1>
+      <h1>Prince of Persia Tic-Tac-Toe</h1>
 
   <!-- Log-in Modal -->
           <br/>
           <div class= ingresa>
-          <button type="button" class="hibtnstyle" data-toggle="modal"
+          <button type="button" class="btnstyle" data-toggle="modal"
           data-target="#ingresa">Log-in</button>
           <div id="ingresa" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -51,7 +51,7 @@
       <!-- Sign-up Modal -->
         </br>
         <div class= register>
-        <button type="button" class="hibtnstyle" data-toggle="modal"
+        <button type="button" class="btnstyle" data-toggle="modal"
         data-target="#register">Register</button>
           <!-- Modal -->
           <div id="register" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -81,48 +81,12 @@
           </div>
         </div>
 
-        <!-- Change Password Modal -->
-        <br/>
-        <div class= cambiopass>
-        <button type="button" class="hibtnstyle" data-toggle="modal"
-        data-target="#cambiopass">Change Password</button>
-          <!-- Modal -->
-          <div id="cambiopass" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-             <div class="modal-content">
-              <!-- Modal content-->
-                <div class="cambiopass-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="cambiopass-title">Hi there,</h4>
-                </div>
-                <div class="cambiopass-body">
-                  <form id="change-password">
-                    <!-- <fieldset> -->
-                      <!-- <legend>Changeyour Password</legend> -->
-                      <!-- <input type="email" name="credentials[email]" placeholder="Your email"> -->
-                      <input type="password" name="passwords[old]" placeholder="Old Password">
-                      <input type="password" name="passwords[new]" placeholder="New Password">
-                      <input type="submit" name="submit" value="Next">
-                    <!-- </fieldset> -->
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <!-- </div> -->
-
-    <br/>
     <br/>
     <!-- <h1> </h1> -->
 
     <div id="message"></div>
 
     <!-- <div id="image"> <img src="http://s2.dmcdn.net/J3OKz/1280x720-38D.jpg" alt=" "> </div> -->
-
 
     <!-- Board -->
     <div class="board">
@@ -144,9 +108,9 @@
    </div>
 
 
-<!-- byeScreen DIV -->
+<!-- byescreen DIV -->
 
-    <div class= "byeScreen">
+    <div class= "byescreen">
       <br/>
       <br/>
       <form id= "new-game">
@@ -163,6 +127,41 @@
           <button type="submit" name="submit" class="btnstyle">View Total Games</button>
       </form>
 
+      <!-- Change Password Modal -->
+      <br/>
+      <div class= cambiopass>
+      <button type="button" class="btnstyle" data-toggle="modal"
+      data-target="#cambiopass">Change Password</button>
+        <!-- Modal -->
+        <div id="cambiopass" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+           <div class="modal-content">
+            <!-- Modal content-->
+              <div class="cambiopass-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="cambiopass-title">Hi there,</h4>
+              </div>
+              <div class="cambiopass-body">
+                <form id="change-password">
+                  <!-- <fieldset> -->
+                    <!-- <legend>Changeyour Password</legend> -->
+                    <!-- <input type="email" name="credentials[email]" placeholder="Your email"> -->
+                    <input type="password" name="passwords[old]" placeholder="Old Password">
+                    <input type="password" name="passwords[new]" placeholder="New Password">
+                    <input type="submit" name="submit" value="Next">
+                  <!-- </fieldset> -->
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+
+
       <br/>
       <form id="sign-out">
         <fieldset>
@@ -172,6 +171,8 @@
           <!-- <input type="submit" name="submit" value="Next"> -->
         </fieldset>
       </form>
+      </br>
+      </br>
 <!--
       <br/>
       <form id= "joinGame">

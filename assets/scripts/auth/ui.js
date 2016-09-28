@@ -7,17 +7,26 @@ const app = require('../app');
 //this way we can share data from one file and share
 //among all the different files that depend on that data
 
+const showOtherButtons = function (){
+  $('.cambiopass').css('display', 'block');
+  $('.byescreen').css('display', 'block');
+};
+
+
+// const hideLogInsButton = function () {
+//   $('.ingresa').css('display', 'none');
+// 	$('.register').css('display', 'none');
+// };
+
 const signInSuccess = (data) => {
   app.user = data.user; //can use app.user or app.token. we know this because the
   console.log(app);
-  $('.app').css("display", "block"); //even though we did not define one. User contains the
-  $('.space').text('');
-  // hide sign up button
-  // hide sign in button
-  // show password button
-  $('h1').text('');   //console in browser told us that we have the key user
-                      //even though we did not define one. User contains the
-};                    //token that we care about
+  // $('.app').css("display", "block");
+  // $('.space').text('');
+  // $('h1').text('');
+  // hideLogInsButton();
+  showOtherButtons();
+};
 
 const signOutSuccess = () =>{
   delete app.user;

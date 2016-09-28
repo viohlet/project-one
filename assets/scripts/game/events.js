@@ -5,8 +5,6 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
-
-
 // const onGetGameById = function (event) {
 // 	event.preventDefault();
 // 	let data = getFormFields(event.target);
@@ -54,6 +52,10 @@ const blockPlay = function(){
 	$('.tile').off('click');
 };
 
+const hideBoard = function () {
+  $('.board').css('display', 'none');
+};
+
 const resumePlay = function(){
   $('.tile').on('click', onClickTile);
 };
@@ -70,21 +72,23 @@ const clearBoard = function (){
   turnTracker = 0;
   over1 = false;
 	resumePlay();
+	hideBoard();
+};
+
+const hideLogInsButton = function () {
+  $('.ingresa').css('display', 'none');
+	$('.register').css('display', 'none');
 };
 
 const onNewGame = function (event) {
   event.preventDefault();
 	let data = getFormFields(event.target);
 	// console.log();
-	// $('.marker').text('');
-	// $('.marker').data('val', '0');
-	// boardArray[0] === ('');
-	// let data = {};
   api.newGame(data)
 	  .done(ui.newGameSuccess)
 	  .fail(ui.failure);
-	// resetBoard();
 	clearBoard();
+	hideLogInsButton();
 };
 
 

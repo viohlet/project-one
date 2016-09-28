@@ -10,9 +10,20 @@ const failure = (error) => {
   console.log(error);
 };
 
+const showBoard = function (){
+  $('.board').css('display', 'block');
+};
+
+// const showLogInButtons = function (){
+//   $('.ingresa').css('display', 'block');
+//   $('.register').css('display', 'block');
+// };
+
 const newGameSuccess = (data) => {
   app.game = data.game;
   console.log(data);
+  showBoard();
+  // showLogInButtons();
 };
 
 const onIndexGamesSuccess = (data) => {
