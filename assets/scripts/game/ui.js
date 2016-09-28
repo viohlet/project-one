@@ -14,6 +14,7 @@ const showBoard = function (){
   $('.board').css('display', 'block');
 };
 
+
 // const showLogInButtons = function (){
 //   $('.ingresa').css('display', 'block');
 //   $('.register').css('display', 'block');
@@ -25,6 +26,7 @@ const newGameSuccess = (data) => {
   showBoard();
   // showLogInButtons();
 };
+
 
 const onIndexGamesSuccess = (data) => {
   document.getElementById("message").innerHTML = 'Games played: '+ data.games.length;
@@ -58,6 +60,7 @@ module.exports = {
   failure,
   newGameSuccess,
   onIndexGamesSuccess,
+  // newGameFailure,
   // updateGameSuccess,
   // getGameByIdSuccess,
   // historyGamesSuccess,

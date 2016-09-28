@@ -2,6 +2,8 @@
 
 
 const app = require('../app');
+// const hideBoard = require('../game/events.js');
+
 //put it in app because there isnt any real code
 // we do this to avoid circular dependency
 //this way we can share data from one file and share
@@ -12,6 +14,14 @@ const showOtherButtons = function (){
   $('.byescreen').css('display', 'block');
 };
 
+const showLogInButtons = function (){
+  $('.ingresa').css('display', 'block');
+  $('.register').css('display', 'block');
+};
+
+const hideBoard2 = function () {
+  $('.board').css('display', 'none');
+};
 
 // const hideLogInsButton = function () {
 //   $('.ingresa').css('display', 'none');
@@ -32,6 +42,8 @@ const signOutSuccess = () =>{
   delete app.user;
   console.log(app);
   $('.app').css("display", "none");
+  showLogInButtons();
+  hideBoard2();
 };
 
 const changePasswordSuccess = () => {

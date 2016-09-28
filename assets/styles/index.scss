@@ -7,6 +7,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $unit: 20px;
 $width: (4 * $unit);
 $height: (4 * $unit);
+$fontmain: 'UnifrakturCook', cursive;
+$fontsec: 'Cinzel Decorative', cursive;
 
 html,
 body {
@@ -16,10 +18,18 @@ body {
 
 h1 {
   color: #E8860C;
-  font-size: 35px;
+  font-size: 45px;
   text-align: center;
   // position: static;
+  letter-spacing: 2px;
+  font-family: $fontmain;
 }
+
+.ingresa-title {
+  // font-family: $fontsec;
+  font-size: 25px;
+}
+
 
 body {
   background-image: url('prince1.jpg');
@@ -30,6 +40,7 @@ body {
   // color: $font-color;
   text-align: center;
   position: relative;
+  font-family: $fontsec;
 }
 
 // .overlay {
