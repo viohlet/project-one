@@ -61,11 +61,6 @@ const clearBoard = function (){
 	hideBoard();
 };
 
-// const hideLogInsButton = function () {
-//   $('.hiscreen').css('display', 'none');
-//   // $('.ingresa').css('display', 'none');
-// 	// $('.register').css('display', 'none');
-// };
 
 const onNewGame = function (event) {
   event.preventDefault();
@@ -95,29 +90,18 @@ let checkForWin = function () {
 			winner = marker;
 			over1 = true;
 			// console.log("winner is " + marker);
-
 			showMessage('The Winner is ' + winner );
-			blockPlay();
 		}
-  };
-
-//Draw conditions
-let checkForDraw = function(){
-	let draw = false;
-	if(turnTracker === 9)
-  {
+  else if (turnTracker === 9){
 		over1 = true;
 		// console.log("tie is" + " " + over1);
 		showMessage('It is a tie!');
-		blockPlay();
 	}
-  else {
-		draw = false;
-	}
-	// console.log("over should be true");
-	 return draw;
-
+  if (over1 === true){
+    blockPlay();
+  }
 };
+
 
 const onClickTile = function(event) {
 	event.preventDefault();
@@ -134,7 +118,7 @@ const onClickTile = function(event) {
 	    turnTracker++; //will become odd
 			api.updateGame(id, marker, over1);
 	    checkForWin ();
-	    checkForDraw ();
+	    // checkForDraw ();
 			// console.log(this);
 	  	}
 	  else {
@@ -145,7 +129,7 @@ const onClickTile = function(event) {
 			// api.updateGame(index, $(this).text(), over1);
 			api.updateGame(id, marker, over1);
 			checkForWin ();
-	    checkForDraw ();
+	    // checkForDraw ();
 			// console.log(this);
 	  	}
 		}

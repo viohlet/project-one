@@ -14,17 +14,10 @@ const showBoard = function (){
   $('.board').css('display', 'block');
 };
 
-// const hideLogInsButton = function () {
-//   $('.hiscreen').css('display', 'none');
-//   // $('.ingresa').css('display', 'none');
-// 	// $('.register').css('display', 'none');
-// };
-
 const newGameSuccess = (data) => {
   app.game = data.game;
   // console.log(data);
   showBoard();
-  // hideLogInsButton();
 };
 
 const onIndexGamesSuccess = (data) => {
