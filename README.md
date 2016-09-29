@@ -11,7 +11,8 @@ Tic tac toe game by VV
   - CSS
   - HTML
 
-- My user story: How-to-kinda-tic-tac-toe
+- My user story:
+- How-to-kinda-tic-tac-toe
 
   - Planning:
 
@@ -32,13 +33,13 @@ Tic tac toe game by VV
     - Angel Ben was with me to merge branches because I was to damn scared to do it alone! Can't deal...
     - Fixed some Ajax issues and was determined to do a POP version.
     - Worked on styling at night and did a lot of progress.
-    - I had extra time to submit and so things went smoothly afterwards and I had the opportunity to work some more on my   front-end. Still would like to re-visit this project!
+    - Had extra time to finish the project and completed the requirements plus added more features to my front-end.
 
   - Problem-Solving Strategies:
 
     - Adding a locally sourced image to my site: I was ok with the url but quickly remember how we are not supposed to do that, and so turns out "url(prince.jpg)" works as long as the image is in your styling folder.
     - My buttons did not work, and never worked. I would very much like to make a change at a later date and have them work properly.
-    - OK to ask questions! If it wasn't because of some of my classmates ( Katie, Ben M., James, Jen, Kathryn, Lauren, Christina, Alex, Julie, Ben L.) I would be lost.
+    - OK to ask questions! If it wasn't because of some of my classmates ( Katie, Ben M., James, Jen, Kathryn, Lauren, Christina, Julie, Alex, Ben L.) I would be lost.
     - How not to stress: If I was stuck for a long time, I would continue to work on another issue to be stuck in :p, so it's OK to move on with life!
     -Almost forgot: MODALS! Solution: spending 4-5 hrs on it.
     
@@ -52,5 +53,5 @@ Tic tac toe game by VV
 
 - Unsolved Problems:
 
-  - Didn't get to try sound features to let know each player it was their turn.
-  - I wanted to add more "old-school" styling features. Only the buttons, background, and fonts. I still want to give my page a welcome overlay and show the prince of persia original welcome screen and sound.
+  - Didn't get to even try my sound features to let know each player it was their turn.
+  - I wanted to add more "old-school" styling features such as the welcome screen of the original Prince of Persia game and images to pop up when you win. Will go back and revisit.
