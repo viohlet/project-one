@@ -38,8 +38,6 @@ const signInSuccess = (data) => {
 const showLogInButtons = function (){
   $('#loginbutton').css('display', 'block');
   $('#signupbutton').css('display', 'block');
-  // $('.ingresa').css('display', 'block');
-  // $('.register').css('display', 'block');
 };
 
 const hideBoard2 = function (){
@@ -47,7 +45,6 @@ const hideBoard2 = function (){
 };
 
 const hideOtherButtons = function (){
-  // $('.cambiopass').css('display', 'none');
   $('.byescreen').css('display', 'none');
 };
 
@@ -86,5 +83,4 @@ module.exports = {
   signOutSuccess,
   changePasswordSuccess,
   signUpSuccess,
-  // showOtherButtons,
 };
